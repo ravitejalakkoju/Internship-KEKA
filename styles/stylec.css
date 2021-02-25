@@ -1,0 +1,152 @@
+html, body, ul {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), color-stop(#fff), color-stop(#8d8d8d), to(#000));
+  background-image: linear-gradient(to bottom, #fff, #fff, #8d8d8d, #000);
+  height: 100%;
+}
+
+header .navbar-nav a {
+  color: #555555 !important;
+}
+
+header .navbar-nav .nav-item:nth-child(n+2) a {
+  color: #555555 !important;
+  border-left: 1px solid #a3a3a3;
+}
+
+header .filters {
+  background-color: #d6d6d6;
+  outline: 1px solid #f0f0f0;
+  outline-offset: -4px;
+}
+
+header .filters .filters-list li {
+  margin: 0;
+  margin-left: -0.3rem;
+  padding: 0.4rem 1rem;
+  border-right: 1px solid #f0f0f0;
+}
+
+header .filters .filters-list li:hover {
+  background-color: #f0f0f0;
+}
+
+header .specials {
+  border-bottom: 1px solid #b8b8b8;
+}
+
+header .specials .specials-list li {
+  margin: 0;
+  margin-left: -0.3rem;
+  padding: 0.4rem 1rem;
+}
+
+header .specials .specials-list li:nth-child(n+2)::before {
+  content: '';
+  display: inline-block;
+  width: 7.5px;
+  height: 7.5px;
+  border-radius: 7.5px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  margin-right: 1rem;
+}
+
+header .specials a {
+  color: #00459e;
+}
+
+header .specials a:hover {
+  color: red;
+  cursor: pointer !important;
+}
+
+.choice li {
+  border-bottom: 1px solid gray;
+}
+
+.choice li:hover {
+  background-color: rgba(0, 0, 0, 0.507) !important;
+}
+
+.re-direct:hover {
+  color: white !important;
+}
+
+.offers {
+  border: 0.5rem solid black;
+}
+
+.offers .div1, .offers .div2, .offers .div3 {
+  border: 1px solid gray;
+  padding: 1rem;
+  padding-bottom: 4rem;
+  background-repeat: no-repeat;
+  background-size: auto 60%;
+  background-position: bottom left;
+}
+
+.offers .div1 div.link a, .offers .div2 div.link a, .offers .div3 div.link a {
+  color: #004e97;
+  text-align: center !important;
+  text-decoration: none;
+}
+
+.offers .div1 {
+  background-image: url("../images/promo_glass.png");
+}
+
+.offers .div2 {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.432))), url("../images/promo_plates.png");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.432)), url("../images/promo_plates.png");
+}
+
+.offers .div3 {
+  background-image: url("../images/promo_album.png");
+  background-size: auto 75%;
+  background-position: bottom right;
+}
+
+.offers .headline, .offers .subtitle {
+  text-align: left;
+}
+
+.details div:nth-child(n+2)::before {
+  content: "|";
+  margin: 0.5rem;
+}
+
+@media only screen and (max-width: 992px) {
+  .navbar-nav a {
+    font-size: 0.85rem;
+  }
+  .navbar-nav .nav-item:nth-child(n+2) a {
+    border-left: none !important;
+    margin: 0.2rem 0;
+  }
+  button:focus {
+    outline: none;
+  }
+  .offers .div1, .offers .div2, .offers .div3 {
+    padding-bottom: 2rem;
+  }
+  .offers .div1 .link, .offers .div2 .link, .offers .div3 .link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .offers .headline, .offers .subtitle, .offers .link a {
+    text-align: center !important;
+  }
+}
+/*# sourceMappingURL=stylec.css.map */
