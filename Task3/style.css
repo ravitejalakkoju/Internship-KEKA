@@ -1,0 +1,446 @@
+html{
+    padding: 0;
+    margin: 0;
+    font-size: 13px;
+    background-color: black;
+}
+body{
+    margin: 0;
+    padding: 0;
+    padding-bottom: 15vh;
+    background-image: linear-gradient(to bottom,#fff,#fff, rgb(78, 78, 78),#000);
+}
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+/* Fonts */
+
+.open-sans{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.roboto{
+    font-family: 'Roboto', sans-serif;
+}
+
+.noto-sans{
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* Re-Usables */
+
+.div-margin{
+    width: 90%;
+    margin: auto;
+}
+
+.header-margin{
+    width: 91%;
+    margin: auto;
+}
+
+.footer-margin{
+    width: 90%;
+    margin: auto;
+}
+
+/* Generic Classes */
+
+.h-list{
+    display: flex;
+}
+
+.p-rel{
+    position: relative;
+}
+
+/* Header */
+
+header{
+    padding: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+header > img{
+    height: 5rem;
+}
+header > .h-list{
+    position: absolute;
+    right: 0;
+    bottom: 1.5rem;
+    font-size: 1.05rem;
+    color: gray;
+}
+
+header > .h-list > .h-list-element > img{
+    position: absolute;
+    left: 3rem;
+    bottom: 0.2rem;
+}
+
+header > .h-list > .h-list-element > span{
+    margin-left: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+header > .h-list > .h-list-element:nth-child(n+2)::before{
+    content: "|";
+    margin: 0 1.5rem;
+    font-size: 1.2rem;
+    color: rgba(128, 128, 128, 0.507);
+}
+
+header a{
+    color: gray;
+    text-decoration: none;
+}
+
+header a:hover{
+    color: rgb(0, 40, 92);
+}
+
+header .blue{
+    color: rgb(0, 40, 92);
+}
+
+/* Navigation Bar */
+
+.nav-bar{
+    width: 95%;
+    padding-left: 3.1%;
+    background-color: rgb(214, 214, 214);
+    margin-top: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    outline: 1px solid rgb(214, 214, 214);
+}
+
+.nav-bar > .h-list{
+    font-size: 1.2rem;
+}
+
+.nav-bar > .h-list > .h-list-element{
+    padding: 1rem 2rem;
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.nav-bar > .h-list > .h-list-element:hover{
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.nav-bar a{
+    text-decoration: none;
+    color: black;
+}
+
+.nav-bar .search{
+    position: absolute;
+    right: 4.1%;
+    border-right: none !important;
+}
+
+.search input, .newsletter input{
+    font-size: 1.2rem;
+    padding: 2px;
+    padding-right: 3rem;
+    padding-left: 0.5rem;
+    border-style: 1px inset rgb(170, 170, 170);
+}
+
+.search > button, .newsletter > button{
+    padding: 0.2rem 0.5rem;
+    margin-left: 5px;
+    font-size: 1.2rem;
+    background-color: white;
+    border-radius: 3px;
+    border: 1px inset gray;
+}
+
+/* specials */
+
+.specials{
+    width: 90%;
+    padding: 0 3%;
+    margin-top: 8px;
+    border-bottom: 1px solid rgba(196, 196, 196, 0.5);
+}
+
+.specials > .h-list{
+    font-size: 1.34rem;
+}
+
+.specials > .h-list > .h-list-element{
+    padding: 1.2rem 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.specials > .h-list > .h-list-element:nth-child(4){
+    padding: 0;
+}
+
+.specials > .h-list > .h-list-element > i{
+    font-size: 0.6rem;
+    padding: 0.5rem;
+    margin: 0 1rem;
+    padding-bottom: -5px;
+}
+
+.specials a{
+    text-decoration: none;
+    color: rgba(12, 45, 107, 0.849);
+}
+
+.specials .registry{
+    position: absolute;
+    right: 4%;
+    border-right: none !important;
+}
+
+.specials .registry img{
+    height: 4rem;
+}
+
+.specials .registry-link{
+    margin-top: 1rem;
+}
+
+.specials a:hover{
+    color: tomato;    
+}
+
+
+/* Content */
+
+.content{
+    width: 90%;
+    border: 0.75rem solid white;
+    background-color: white;
+}
+
+.content img{
+    width: 65vw;
+}
+
+.content > .h-list > .dress-table{
+    padding: 1.4rem 2.5rem;
+    margin-left: 1rem;
+    margin-bottom: 0.2rem;
+    width: 150%;
+    background-color: rgba(0, 0, 0, 0.795);
+    outline: 1px solid rgba(255, 255, 255, 0.274);
+    outline-offset: -7px;
+    color: white;
+}
+
+.content > .h-list > .dress-table > .dress-table-types{
+    padding: 1.25rem 1rem;
+}
+
+.content > .h-list > .dress-table > .dress-table-types > div.title{
+    font-size: 2.5rem;
+    font-weight: 300;
+    padding: 1rem 0;
+}
+
+.content > .h-list > .dress-table > .dress-table-types > div.choice{
+    font-size: 1.15rem;
+    font-weight: 300;
+    line-height: 2rem;
+    letter-spacing: 0.5px;
+    padding: 0.5rem 0;
+    color: rgb(165, 165, 165);
+}
+
+.content > .h-list > .dress-table > .dress-table-types > ul{
+    margin-top: 0.5rem;
+    list-style: none;
+}
+
+.content > .h-list > .dress-table > .dress-table-types > ul > li{
+    font-size: 1.4rem;
+    margin: 0 0 0 -1rem;
+    padding-bottom: 0.5rem;
+    padding: 1rem 0 0.5rem 1rem;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+}
+
+.content > .h-list > .dress-table > .dress-table-types > ul > li:last-child{
+    border: 0;
+    margin-bottom: 1rem;
+}
+
+.content > .h-list > .dress-table > .dress-table-types > ul > li:hover{
+    background-color: gray;
+    cursor: pointer;
+}
+
+.content > .h-list > .dress-table > .dress-table-types > ul > li > a{
+    color: rgba(255, 255, 255, 0.897);
+    text-decoration: none;
+    font-weight: 300;
+}
+
+.content > .h-list > .dress-table > .dress-table-types > a{
+    color: rgb(165, 165, 165);
+    font-size: 1.1rem;
+}
+
+
+/* Sales */
+
+.sales{
+    width: 90%;
+    height: 20vh;
+    border: 0.75rem solid rgba(0, 0, 0, 0.767);
+    background-color: white;
+    letter-spacing: 0.5px;
+}
+
+.sales > .h-list > .h-list-element{
+    flex: 1;
+    height: 20vh;
+}
+
+.sales > .h-list > .h-list-element > img{
+    position: absolute;
+    bottom: 0;
+}
+
+.sales > .h-list > .h-list-element:last-child > img{
+    right: 0;
+}
+
+.headline{
+    font-size: 1.55rem;
+    color: rgba(0, 0, 0, 0.753);
+}
+
+.subtitle{
+    font-size: 1.05rem;
+    color: rgba(128, 128, 128, 0.795);
+}
+
+.link{
+    font-size: 1.2rem;
+}
+
+
+.sales > .h-list > .h-list-element.glass > .headline, .sales > .h-list > .h-list-element.plates > .headline, .sales > .h-list > .h-list-element.album > .headline{
+    position: absolute;
+    z-index: 1;
+    left: 1.5rem;
+    top: 2rem;
+}
+
+.sales > .h-list > .h-list-element.glass > .subtitle, .sales > .h-list > .h-list-element.plates > .subtitle, .sales > .h-list > .h-list-element.album > .subtitle{
+    position: absolute;
+    z-index: 1;
+    left: 1.65rem;
+    top: 4rem;
+}
+
+.sales > .h-list > .h-list-element.glass > .link, .sales > .h-list > .h-list-element.plates > .link, .sales > .h-list > .h-list-element.album > .link{
+    position: absolute;
+    z-index: 1;
+    top: 7rem;
+    right: 2.7rem;
+}
+
+.sales > .h-list > .h-list-element.glass > .link > a, .sales > .h-list > .h-list-element.plates > .link > a, .sales > .h-list > .h-list-element.album > .link > a{
+    color: rgba(0, 59, 99, 0.726);
+    text-decoration: none;
+}
+
+.sales > .h-list > .h-list-element.album > .headline{
+    width: 50%;
+}
+
+.sales > .h-list > .h-list-element.album > .subtitle{
+    width: 50%;
+    top: 7rem;
+}
+
+.sales > .h-list > .h-list-element.album > .link{
+    left: 1.5rem;
+    top: 12rem;
+}
+
+.plates, .album{
+    border-left: 1px solid rgba(0, 0, 0, 0.123);
+}
+
+
+/* Footer */
+
+footer{
+    padding: 1rem 0;
+    letter-spacing: 0.5px;
+    font-size: 1.05rem;
+    width: 90%;
+    color: rgb(182, 182, 182);
+}
+
+footer > .h-list{
+    font-size: 1.05rem;
+}
+
+footer > .h-list > .h-list-element:nth-child(n+2)::before{
+    content: "|";
+    margin: 0 1.5rem;
+    color: rgb(180, 180, 180);
+}
+
+footer a{
+    color: rgb(182, 182, 182);
+}
+
+footer a:hover{
+    color: white;
+}
+
+footer .call{
+    margin-top: 1rem;
+}
+
+i{
+    font-size: 1rem;
+}
+
+.newsletter{
+    position: absolute;
+    right: -2rem;
+    top: 1rem;
+}
+
+.newsletter input{
+    margin-top: 1rem;
+    padding-right: 5rem;
+}
+
+.newsletter button{
+    margin-top: 1rem;
+    padding: 0.2rem 0.6rem;
+}
+
+/* Media Query */
+
+
+@media only screen and (max-width: 1375px){
+    html{
+        font-size: 11px;
+    }
+}
+
+@media only screen and (max-width: 1200px){
+    html{
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 1140px){
+    html{
+        display: none;
+    }
+}

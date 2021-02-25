@@ -1,0 +1,296 @@
+html{
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+}
+body{
+    padding: 0;
+    margin: 0;
+    background-image: url('E:/Coding/Internship/Task2/images/bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Reusables */
+
+.top-margin{
+    margin-top: 1.5rem;
+}
+
+.div-margin{
+    width: 48%;
+    margin: auto;
+}
+
+.open-sans{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.roboto{
+    font-family: 'Roboto', sans-serif;
+}
+
+.century-gothic{
+    font-family: 'Century Gothic';
+    src: url('./font/Century Gothic.eot');
+    src: url('./font/Century Gothic.eot?#iefix') format('embedded-opentype'),
+        url('./font/Century Gothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+} 
+
+.noto-sans{
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+/* Commonly Used */
+
+ul{
+    margin: 0;
+    padding: 0;
+}
+
+ul.no-style{
+    list-style: none;
+}
+
+.no-dec a{
+    text-decoration: none;
+}
+
+/* portal */
+
+.portal{
+    background-color: rgba(0, 0, 0, 0.35);
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    right: 25%;
+    padding: 0.25rem 0.3rem;
+    font-weight: 600;
+}
+
+.portal > ul{
+    list-style: none;
+    font-size: 0.6rem;  
+}
+
+.portal > ul > li {
+    display: inline;
+}
+
+.portal > ul > li:nth-child(n+2)::before{
+    content: "|";
+    color: rgb(230, 230, 230);
+    font-size: 0.5rem;
+    margin: 0 0.3rem;
+}
+
+.portal > ul > li > a{
+    color: rgb(230, 230, 230);
+}
+
+.portal > ul > li > a:hover{
+    color: tomato;
+}
+
+/* Navigation bar */
+
+.nav-bar{
+    position: relative;
+    background-color: rgba(3, 11, 26, 0.788);
+    margin-top: 2.7rem;
+    padding: 1.1rem 1rem;
+    font-weight: 400;
+    outline: 1px solid rgba(255, 255, 255, 0.24);
+    outline-offset: -5px;
+}
+
+.nav-bar > ul > li{
+    display: inline;
+}
+
+
+.nav-bar > img{
+    position: absolute;
+    top: -2rem;
+}
+
+.nav-bar > ul {
+    text-align: right;
+}
+
+.nav-bar > ul > li {
+    margin-right: -0.25rem;
+}
+
+.nav-bar > ul > li:nth-child(n+2)::before{
+    content: "|";
+    color: white;
+    padding: 0;
+}
+
+
+.nav-bar a{
+    padding: 0.2rem 0.5rem;
+    color: rgb(145, 201, 238);
+    border-radius: 3px;
+    font-size: 0.9rem;
+}
+
+.nav-bar a:hover{
+    background-color: rgba(60, 140, 194, 0.541);
+    color: white;
+}
+
+.active-sec a{
+    background-color: rgba(60, 140, 194, 0.541);
+    color: white;
+}
+
+/* Home Header */
+
+header{
+    padding: 2rem 1rem 1rem 1rem;
+    color: white;
+    font-weight: 400;
+    font-size: 2rem;
+    background-color: rgba(0, 0, 0, 0.301);
+}
+
+header > span , header > span > span{
+    margin: 0 0.75rem;
+    letter-spacing: 8px;
+}
+
+/* Card Section */
+
+.card-section{
+    background-color: rgba(11, 21, 36, 0.877);
+    padding: 1rem 1rem 3rem 1rem;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    line-height: 1rem;
+    display: flex;
+    position: relative;
+    margin-bottom: 6px;
+}
+
+.card{
+    flex: 1;
+}
+
+.card > img {
+    padding: 0 10px;
+    padding-top: 8px;
+    text-align: center;
+}
+
+.card > p {
+    margin: 13px;
+    color: white;
+    width: 90%;
+}
+
+.card > a{
+    margin: 13px;
+    color: rgb(156, 209, 245);
+    position: absolute;
+    bottom: 1rem;
+}
+
+.card:hover{
+    background-color: rgba(0, 0, 0, 0.596);
+    cursor: pointer;
+}
+
+/* Services Section */
+
+.services{
+    margin-top: 2rem;
+    margin-bottom: 8px;
+    padding: 1rem;
+    background-color: rgba(11, 21, 36, 0.877);
+    color: white;
+    display: flex;
+    font-family: 'Lato', sans-serif;
+}
+
+.border-effect{
+    border-top: 2px solid rgba(255, 255, 255, 0.25);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+    padding: 0.5rem 0;
+}
+
+.left{
+    flex:1
+}
+
+.left > img{
+    margin: 0.5rem 0;
+}
+
+.services > .left  a{
+    font-size: 0.7rem;
+    color: rgb(156, 209, 245);
+}
+
+.services > .left  a:hover{
+    color: tomato;
+}
+
+.services > .right > span {
+    font-size: 1.1rem;
+    font-weight: 400rem;
+    color: rgb(156, 209, 245);
+}
+
+.services > .right{
+    font-size: 0.65rem;
+    margin: 0 2rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    line-height: 1rem;
+}
+
+.inner-list{
+    margin: 1rem;
+}
+
+.help{
+    padding: 1.2rem 2rem;
+    background-color: rgba(0, 37, 61, 0.596);
+}
+
+.help > li:first-child{
+    margin-bottom: 10px;
+    font-size: 0.7rem;
+}
+
+.help > li > a{
+    font-weight: 600;
+    background-color: rgb(10, 81, 128);
+    border: 1px solid rgb(1, 92, 153);
+    color: white;
+    padding: 0.2rem 0.4rem;
+    border-radius: 5px;
+}
+
+.help > li > a:hover{
+    background-color: rgb(2, 31, 51);
+}
+
+/* footer */
+
+footer{
+    font-size: 0.55rem;
+    color: rgba(255, 255, 255, 0.644);
+    padding: 0.2rem 1rem;
+    background-color: rgba(7, 29, 54, 0.514);
+    text-align: center;
+}
+
+footer a {
+    color: white;
+    margin: 0 0.2rem;
+}

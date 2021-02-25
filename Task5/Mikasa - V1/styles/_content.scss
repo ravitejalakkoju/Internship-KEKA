@@ -1,0 +1,56 @@
+.content{
+    margin: 0 10rem;
+    border: 0.5rem solid white;
+    background-color: white;
+    @include d-flex(space-between);
+    img{
+        height: 45rem;
+        // border: 1rem solid white;
+    }
+    .dress-table{
+        padding: 2rem;
+        margin: 0 0 0.25rem 1rem;
+        background-color: rgb(61, 61, 61);
+        color: white;
+        outline: 1px solid $nav-grade-white;
+        outline-offset: -5px;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 0.05rem;
+        line-height: 2rem;
+        .title{
+            margin-top: 2rem;
+            font-size: 2rem;
+            font-weight: 300;
+        }
+        .choice{
+            font-size: 1rem;
+            margin: 2rem 0;
+            font-weight: 300;
+            color: rgb(189, 189, 189);
+        }
+        ul{
+            margin-left: -0.5rem;
+            list-style: none;
+            li{
+                font-size: 1.1rem;
+                padding: 0.5rem;
+                &:hover{
+                    background-color: rgba(255, 255, 255, 0.158);
+                }
+                &:nth-child(-n+5){
+                    border-bottom: 1px solid $nav-grade-white;
+                }
+                a{
+                    color: white;
+                    text-decoration: none;
+                    font-weight: 300;
+                }
+            }
+            margin-bottom: 2rem;
+        }
+        a.re-direct {
+            color: $nav-grade-white;
+            font-size: 0.8rem;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+.offers{
+    background-color: white;
+    border: 0.5rem solid black;
+    margin: 0 10rem;
+    @include d-flex(center);
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    height: 15rem;
+    .offer{
+        flex: 1;
+        position: relative;
+        .offer-i{
+            margin: 3rem 3rem;
+            .headline{
+                font-size: 1.5rem;
+                @include d-flex(flex-start);
+            }
+            .subtitle{
+                font-size: 1.2rem;
+                color: gray;
+                @include d-flex(flex-start);
+            }
+            .link{
+                margin-top: 1rem;
+                @include d-flex(flex-end);
+            }
+        }
+        .left{
+            margin: 3rem 12rem;
+            margin-left: 1rem;
+            .link{
+                @include d-flex(flex-start);
+            }
+        }
+        img{
+            position: absolute;
+            height: 8rem;
+            bottom: 0;
+            z-index: 0;
+        }
+        img.albums{
+            height: 12.5rem;
+            right: 0;
+        }
+    }
+    .b-left{
+        border-left: 1px solid rgb(199, 199, 199);
+    }
+}

@@ -1,0 +1,39 @@
+header{
+    margin: 0 10rem;
+    @include d-flex(space-between);
+    .logo{
+        img{
+            height: 4rem;
+        }
+    }
+    .links{
+        @include d-flex(normal);
+        margin-top: 2rem;
+        font-size: 1rem;
+        color: gray;
+        font-family: 'Roboto', sans-serif;
+        .link{
+            position: relative;
+            a{
+                color: gray;
+                text-decoration: none;
+                &:hover{
+                    color: rgb(0, 48, 87);
+                }
+            }
+            img{
+                position: absolute;
+                height: 1.3rem;
+            }
+            .amount{
+                margin-left: 1.54rem;
+                margin-right: 0.5rem;
+            }
+            &:nth-child(n+2)::before{
+                content: '|';
+                margin: 0 1rem;
+                color: rgba(128, 128, 128, 0.493);
+            }
+        }
+    }
+}

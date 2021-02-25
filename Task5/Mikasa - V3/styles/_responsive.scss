@@ -1,0 +1,30 @@
+@media only screen and (max-width: 992px){
+    .navbar-nav{
+        a{
+            font-size: 0.85rem;
+        }
+        .nav-item:nth-child(n+2){
+            a{
+                border-left: none !important;
+                margin: 0.2rem 0;
+            }
+        }
+    }
+    button:focus{
+        outline: none;
+    }
+    .offers{
+        .div1, .div2, .div3{
+            padding-bottom: 2rem;
+            .link{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .headline, .subtitle, .link a{
+            text-align: center !important;
+        }
+        
+    }
+}

@@ -1,0 +1,164 @@
+// General
+
+html, body, ul{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: linear-gradient(to bottom, #fff, #fff, rgb(141, 141, 141), #000);
+    height: 100%;
+}
+
+
+// Variables
+
+$nav-white: rgb(240, 240, 240);
+
+// Header Section
+
+header{
+    .navbar-nav{
+        a{
+            color: rgb(85, 85, 85) !important;
+        }
+        .nav-item:nth-child(n+2){
+            a{
+                color: rgb(85, 85, 85) !important;
+                border-left: 1px solid rgb(163, 163, 163);
+            }
+        }
+    }
+    .filters{
+        background-color: rgb(214, 214, 214);
+        outline: 1px solid $nav-white;
+        outline-offset: -4px;
+        .filters-list{
+            li{
+                margin: 0;
+                margin-left: -0.3rem;
+                padding: 0.4rem 1rem;
+                // background-color: red;
+                border-right: 1px solid $nav-white;
+                &:hover{
+                    background-color: $nav-white;
+                }
+            }
+        }
+    }
+    .specials{
+        border-bottom: 1px solid rgb(184, 184, 184);
+        .specials-list{
+            li{
+                margin: 0;
+                margin-left: -0.3rem;
+                padding: 0.4rem 1rem;
+                &:nth-child(n+2)::before{
+                    content: '';
+                    display: inline-block;
+                    width: 7.5px;
+                    height: 7.5px;
+                    -moz-border-radius: 7.5px;
+                    -webkit-border-radius: 7.5px;
+                    border-radius: 7.5px;
+                    background-color: #ffffff;
+                    border: 1px solid black;
+                    margin-right: 1rem;
+                 }
+            }
+        }
+        a{
+            color: rgb(0, 69, 158);
+            &:hover{
+                color: red;
+                cursor: pointer !important;
+            }
+        }
+    }
+}
+
+// Middle Section
+
+.choice{
+    li{
+        border-bottom: 1px solid gray;
+        &:hover{
+            background-color: rgba(0, 0, 0, 0.507) !important;
+        }
+    }
+}
+.re-direct:hover{
+    color: white !important;
+}
+.offers{
+    border: 0.5rem solid black;
+    .div1, .div2, .div3 {
+        border: 1px solid gray;
+        padding: 1rem;
+        padding-bottom: 4rem;
+        background-repeat: no-repeat;
+        background-size: auto 60%;
+        background-position: bottom left;
+        div.link a{
+            color: rgb(0, 78, 151);
+            text-align: center !important;
+            text-decoration: none;
+        }
+    }
+    .div1{
+        background-image: url('../images/promo_glass.png');
+    }
+    .div2{
+        background-image:  linear-gradient(rgba(255, 255, 255, 0.432)), url('../images/promo_plates.png');
+    }
+    .div3{
+        background-image: url('../images/promo_album.png');
+        background-size: auto 75%;
+        background-position: bottom right;
+    }
+    .headline, .subtitle{
+        text-align: left;
+    }
+}
+
+// Footer Section
+
+.details{
+    div:nth-child(n+2)::before{
+        content: "|";
+        margin: 0.5rem;
+    }
+}
+
+// Responsive Section
+
+@media only screen and (max-width: 992px){
+    .navbar-nav{
+        a{
+            font-size: 0.85rem;
+        }
+        .nav-item:nth-child(n+2){
+            a{
+                border-left: none !important;
+                margin: 0.2rem 0;
+            }
+        }
+    }
+    button:focus{
+        outline: none;
+    }
+    .offers{
+        .div1, .div2, .div3{
+            padding-bottom: 2rem;
+            .link{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .headline, .subtitle, .link a{
+            text-align: center !important;
+        }
+        
+    }
+}

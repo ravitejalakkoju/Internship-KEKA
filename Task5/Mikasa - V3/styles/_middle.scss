@@ -1,0 +1,41 @@
+.choice{
+    li{
+        border-bottom: 1px solid gray;
+        &:hover{
+            background-color: rgba(0, 0, 0, 0.507) !important;
+        }
+    }
+}
+.re-direct:hover{
+    color: white !important;
+}
+.offers{
+    border: 0.5rem solid black;
+    .div1, .div2, .div3 {
+        border: 1px solid gray;
+        padding: 1rem;
+        padding-bottom: 4rem;
+        background-repeat: no-repeat;
+        background-size: auto 60%;
+        background-position: bottom left;
+        div.link a{
+            color: rgb(0, 78, 151);
+            text-align: center !important;
+            text-decoration: none;
+        }
+    }
+    .div1{
+        background-image: url('../images/promo_glass.png');
+    }
+    .div2{
+        background-image:  linear-gradient(rgba(255, 255, 255, 0.432)), url('../images/promo_plates.png');
+    }
+    .div3{
+        background-image: url('../images/promo_album.png');
+        background-size: auto 75%;
+        background-position: bottom right;
+    }
+    .headline, .subtitle{
+        text-align: left;
+    }
+}

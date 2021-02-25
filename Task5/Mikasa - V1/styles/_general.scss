@@ -1,0 +1,14 @@
+html, body, ul{
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+}
+
+body{
+    background-image: linear-gradient(to bottom, #fff, #fff, rgb(73, 73, 73),#000);
+}
+
+@mixin d-flex($type) {
+    display: flex;
+    justify-content: $type;
+}

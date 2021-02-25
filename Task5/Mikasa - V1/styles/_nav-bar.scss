@@ -1,0 +1,48 @@
+$nav-grade-white: rgba(255, 255, 255, 0.6);
+
+.nav-bar{
+    width: 100vw;
+    background-color: rgb(199, 199, 199);
+    height: 3rem;
+    outline: 1px solid $nav-grade-white;
+    outline-offset: -0.2rem;
+    .navigation{
+        margin: 0 9rem;
+        @include d-flex(space-between);
+        font-family: 'Roboto', sans-serif;
+        .navs{
+            @include d-flex(normal);
+            // align-items: center;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            .nav{
+                margin-top: 0.1rem;
+                padding: 0.85rem 1.7rem;
+                border-right: 1px solid $nav-grade-white;
+                a{
+                    color: black;
+                    text-decoration: none;
+                }
+                &:hover{
+                    background-color: $nav-grade-white;
+                }
+            }
+        }
+        .search{
+            margin: auto 0;
+            input{
+                padding: 0.1rem;
+                border: 2px ridge;
+                padding-right: 3rem;
+                font-size: 0.9rem;
+            }
+            button{
+                padding: 0.1rem;
+                background-color: white;
+                border-radius: 0.3rem;
+                border: 2px ridge;
+                font-size: 0.9rem;
+            }
+        }
+    }
+}

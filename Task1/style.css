@@ -1,0 +1,152 @@
+html{
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+}
+body{
+    padding: 0;
+    margin: 0;
+}
+
+/* fonts */
+
+.open-sans{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.century-gothic{
+    font-family: 'Century Gothic';
+    src: url('./fonts/Century Gothic.eot');
+    src: url('./fonts/Century Gothic.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Century Gothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.roboto{
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Reusables */
+
+.div-margin{
+    margin: 2rem 3rem;
+}
+
+.div-width-75{
+    width: 75%;
+}
+
+.div-width-50{
+    width: 50%;
+}
+
+/* header styles */
+
+header{
+    background-color: rgb(22, 149, 199);
+    padding: 2rem 1rem;
+}
+
+header > span {
+    font-weight: 600;
+    font-size: 3.5rem;
+    color: white;
+}
+
+/* Navigation Bar */
+
+.active{
+    background-color: rgb(231, 113, 17);
+}
+
+.nav-bar{
+    background-color: rgb(53, 53, 53);
+    display: inline-block;
+    width: 100%;
+    position: relative;
+}
+
+
+.nav-bar > .nav-bar_main{
+    list-style: none;
+    margin: 0;
+    padding: 0.6rem 0;
+}
+
+.nav-bar > .nav-bar_main > li {
+    display: inline;
+    padding: 0.6rem 1rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.nav-bar > .nav-bar_main > li > a{
+    text-decoration: none;
+    color: white;
+}
+
+.nav-bar > .nav-bar_main > li:hover{
+    background-color: rgb(231, 113, 17);
+}
+
+.nav-bar span{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.6rem 1.5rem;
+}
+
+
+/* News Section */
+
+.news-container{
+    border: 1px solid grey;
+    padding: 0.5rem;
+}
+
+.news-container > span{
+    font-size: larger;
+    font-weight: 500;
+    margin: 0.5rem;
+}
+
+.news-container > ul {
+    margin: 0;
+}
+
+.news-container > ul.dashed{
+    list-style-type: none;
+}
+
+.news-container > ul.dashed > li {
+    text-indent: -1.5rem;
+}
+
+.news-container > ul.dashed > li:before {
+    content: "-";
+    margin-right: 0.5rem;
+}
+
+.news-container > ul > li {
+    padding: 0.75rem;
+    text-indent: 1rem;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+
+/* Welcome Section */
+
+.content{
+    font-weight: 600;
+}
+
+.content > h3 {
+    font-size: 1.3rem;
+    margin: 0;
+}
+
+.content > p {
+    font-size: 0.85rem;
+}

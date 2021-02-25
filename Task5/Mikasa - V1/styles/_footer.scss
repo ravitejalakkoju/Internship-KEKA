@@ -1,0 +1,31 @@
+footer{
+    margin: 0 10rem;
+    @include d-flex(space-between);
+    padding: 1rem 0;
+    color: rgb(182, 182, 182);
+    font-size: 1.3rem;
+    a{
+        color: rgb(182, 182, 182);
+    }
+    .left{
+        .details{
+            @include d-flex(normal);
+            div:nth-child(n+2)::before{
+                content: "|";
+                margin: 0 1rem;
+            }
+        }
+        .call{
+            margin-top: 1rem;
+        }
+    }
+    .newsletter{
+        input, button{
+            margin-top: 1rem;
+        }
+        button{
+            background-color: white;
+            border-radius: 0.25rem;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+$link: rgb(0, 62, 121);
+
+.specials{
+    width: 100vw;
+    height: 4rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    .special-inner{
+        margin: 0 10.85rem;
+        @include d-flex(space-between);
+        font-family: 'Roboto', sans-serif;
+        .links{
+            @include d-flex(normal);
+            align-items: center;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            .link{
+                margin-top: 0.1rem;
+                a{
+                    color: $link;
+                    text-decoration: none;
+                    i{
+                        margin: 0 1rem;
+                        font-size: 0.5rem;
+                        color: black;
+                    }
+                }
+                &:hover{
+                    background-color: $nav-grade-white;
+                }
+            }
+        }
+        .bride-registry{
+            display: flex;
+            align-items: center;
+            img{
+                height: 4rem;
+            }
+            a{
+                font-size: 0.9rem;
+                letter-spacing: 0.1rem;
+                color: $link;
+                text-decoration: none;
+            }
+        }
+    }
+}
