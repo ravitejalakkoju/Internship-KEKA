@@ -86,14 +86,14 @@ function displayContact(){
         <div class="row">\
             <label class="col-12 col-sm-5 col-md-4 col-form-label fw-bold">My Name :</label>\
             <div class="col-sm-8 col-xl-4">\
-                <input type="text" name="your-name" class="form-control shadow-none rounded-0 p-0">\
+                <input type="text" name="your-name" class="form-control shadow-none rounded-0 p-0 required">\
             </div>\
             <div id="nameHelp" class="form-text col-12 col-xl-4 mt-0 mb-2 mb-md-0 text-danger"></div>\
         </div>\
         <div class="row">\
             <label class="col-12 col-sm-5 col-md-4 col-form-label fw-bold">My Email Address :</label>\
             <div class="col-sm-8 col-xl-4">\
-                <input type="email" name="your-email" class="form-control shadow-none rounded-0 p-0" placeholder="xyz.123_abc@hyd-office.co.in">\
+                <input type="email" name="your-email" class="form-control shadow-none rounded-0 p-0 required" placeholder="xyz.123_abc@hyd-office.co.in">\
             </div>\
             <div id="emailHelp" class="form-text col-12 col-xl-4 mt-0 mb-2 mb-md-0 text-danger"></div>\
         </div>\
@@ -120,7 +120,7 @@ function displayContact(){
         <div class="row">\
             <label class="col-12 col-sm-5 col-md-4 col-form-label fw-bold">My Organization Name :</label>\
             <div class="col-sm-8 col-xl-4">\
-                <input type="text" name="your-org" class="form-control shadow-none rounded-0 p-0">\
+                <input type="text" name="your-org" class="form-control shadow-none rounded-0 p-0 required">\
             </div>\
             <div id="orgHelp" class="form-text col-12 col-xl-4 mt-0 mb-2 mb-md-0 text-danger"></div>\
         </div>\
@@ -134,6 +134,7 @@ function displayContact(){
             <label class="col-12 col-sm-5 col-md-4 col-form-label fw-bold">My State or Province</label>\
             <div class="col-sm-8 col-xl-4">\
                 <select class="form-control shadow-none rounded-0 p-0" id="state" name="state" onchange="promoChange()">\
+                    <option value="None" selected>Select State or Province</option>\
                     <option value="Andhra Pradesh">Andhra Pradesh</option>\
                     <option value="Arunachal Pradesh">Arunachal Pradesh</option>\
                     <option value="Assam">Assam</option>\
@@ -277,9 +278,12 @@ function hellolady(){
     document.getElementById('genderHelp').innerHTML = 'Hello Lady'; 
 }
 
-if(document.getElementById('promo'))
+if(document.getElementById('promo') && document.getElementById('promo').value !== 'Select State or Province')
 document.getElementById('promo').value = document.getElementById('state').value + '-PROMO'; 
 
 function promoChange(){
+    if(document.getElementById('state').value !== "None" && document.getElementById('promo'))
     document.getElementById('promo').value = document.getElementById('state').value + '-PROMO'; 
+    else 
+    document.getElementById('promo').value = ''; 
 }
