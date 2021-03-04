@@ -3,8 +3,8 @@ console.log("working");
 function displayHome(){
     document.getElementById('home').classList.add('active');
     if(document.getElementById('careers').classList.contains('active') || document.getElementById('contact').classList.contains('active')){
-        document.getElementById('careers').classList.remove('active')
-        document.getElementById('contact').classList.remove('active')
+        document.getElementById('careers').classList.remove('active');
+        document.getElementById('contact').classList.remove('active');
     }
     document.getElementById('v-content').innerHTML = '<div class="home" id="home-content">\
     <div class="border mt-4 p-3 pt-1 col-xl-8 m-auto ms-xl-5">\
