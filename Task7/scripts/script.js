@@ -243,14 +243,20 @@ function validate(){
     console.log(name, email, org, validateEmail(email));
 	if (name.length<1) {
         document.getElementById('nameHelp').innerHTML = "Name is required *"
+    } else {
+        document.getElementById('nameHelp').innerHTML = ""
     }
     if (email.length<1) {
         document.getElementById('emailHelp').innerHTML = "Email is required *";
+    } else {
+        document.getElementById('emailHelp').innerHTML = "";
     }
     if (org.length<1) {
         document.getElementById('orgHelp').innerHTML = "Organization is required *";      
+    } else {
+        document.getElementById('orgHelp').innerHTML = "";      
     }
-    if(!validateEmail(email)){
+    if(!validateEmail(email) && email.length >= 1){
         document.getElementById('emailHelp').innerHTML = "Enter in correct pattern [eg., xyz.123_abc@hyd.co.in]";
     }
     window.scrollTo({top: 0, behavior: 'smooth'});      
