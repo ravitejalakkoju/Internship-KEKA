@@ -72,7 +72,10 @@ function updateMobileHelp(){
     var contactby = document.forms["contactForm"]["contactby"].value;
     if(contactby === 'both' || contactby === 'phone')
         document.getElementById('number').classList.add('required');
-    else document.getElementById('number').classList.remove('required');
+    else { 
+        document.getElementById('number').classList.remove('required'); 
+        document.getElementById('mobileHelp').innerHTML = '';
+    }
 }
 
 function updateResume(){
