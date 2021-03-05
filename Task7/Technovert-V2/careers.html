@@ -51,9 +51,9 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-xl-2 col-form-label fw-bold">Email</label>
                 <div class="col-sm-8 col-xl-4">
-                    <input type="email" name="your-email" class="form-control shadow-none rounded-0 p-1 required" placeholder="xyz.123_abc@hyd-office.co.in" oninput="iterativeValidation('email')" required>
+                    <input type="email" name="your-email" class="form-control shadow-none rounded-0 p-1 required" placeholder="xyz.123_abc@hyd-office.co.in" oninput="iterativeValidation('careerForm','email')" required>
                 </div>
-                <div id="emailHelp" class="form-text col-12 col-xl-4"></div>
+                <div id="emailHelp" class="form-text col-12 col-xl-4 text-danger"></div>
             </div>
             <div class="mb-3 row">
                 <label class="col-sm-3 col-xl-2 col-form-label fw-bold">Desired Role</label>
@@ -72,7 +72,7 @@
                 <div class="col-sm-8 col-xl-4">
                     <span class="form-control shadow-none rounded-0 p-1 text-secondary required" id="filename">No file chosen</span>
                 </div>
-                <input type="file" name="your-resume" class="shadow-none rounded-0 p-1 col-xl-2" style="color: transparent;" onchange="updateResume()" required>
+                <input type="file" name="your-resume" accept=".pdf" class="shadow-none rounded-0 p-1 col-xl-2" style="color: transparent;" onchange="updateResume()" required>
             </div>
             <div class="mb-3 row">
                 <label class="col-sm-3 col-xl-2 col-form-label fw-bold"></label>
@@ -83,6 +83,7 @@
         </form>
     </div>    <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="./scripts/script.js"></script>
+    <script src="./scripts/careerFormScript.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
   </body>
 </html>
