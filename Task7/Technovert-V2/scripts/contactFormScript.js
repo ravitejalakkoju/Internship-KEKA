@@ -40,6 +40,10 @@ function validateContactForm(){
         document.getElementById('mobileHelp').innerHTML = `Number is required *`;
     else document.getElementById('mobileHelp').innerHTML = '';
     
+    if(!validateEmail(email) && email.length >= 1){
+        document.getElementById('emailHelp').innerHTML = "Enter in correct pattern [eg., xyz.123_abc@hyd.co.in]";
+    }
+    
     if (mobile.length >= 1) 
         document.getElementById('mobileHelp').innerHTML = `Incorrect Number (only ${mobile.length} digits given)`;
 
