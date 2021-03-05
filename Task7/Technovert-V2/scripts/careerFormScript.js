@@ -14,10 +14,10 @@ function validateCareerForm(){
 	var desiredRole = document.forms["careerForm"]["your-role"].value;
     var resume = document.forms["careerForm"]["your-resume"].value;
 
-    console.log(resume);
+    console.log(desiredRole);
 	  
     window.scrollTo({top: 0, behavior: 'smooth'});      
-    if(!validateEmail(email) || name.length<1 || email.length<1 || desiredRole.length < 1){
+    if(!validateEmail(email) || name.length<1 || email.length<1 || desiredRole.length === '' || resume.length < 1){
         document.getElementById("warning").innerHTML = "<h6 class='fw-bold text-danger m-2 ms-3'>Please fill all the fields below</h6>";
        	return false;
     } else alert('Submitted Successfully');

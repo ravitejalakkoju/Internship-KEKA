@@ -58,13 +58,14 @@
             <div class="mb-3 row">
                 <label class="col-sm-3 col-xl-2 col-form-label fw-bold">Desired Role</label>
                 <div class="col-sm-8 col-xl-4">
-                    <input type="text" list="datalistOptions"  name="your-role" class="form-control shadow-none rounded-0 p-1 required" required>
-                    <datalist id="datalistOptions">
-                        <option value="UI Developer">
-                        <option value="Front End Developer">
-                        <option value="Full Stack Developer">
-                        <option value="Quality Analyst">
-                    </datalist>
+                    <!-- <input type="select" list="datalistOptions"  name="your-role" class="form-control shadow-none rounded-0 p-1 required" required> -->
+                    <select id="datalistOptions" class="form-control shadow-none rounded-0 p-1 required" name="your-role" required>
+                        <option value="">Select Role</option>
+                        <option value="UI Developer">UI Developer</option>
+                        <option value="Front End Developer">Front End Developer</option>
+                        <option value="Full Stack Developer">Full Stack Developer</option>
+                        <option value="Quality Analyst">Quality Analyst</option>
+                    </select>
                 </div>
             </div>
             <div class="mb-3 row">
