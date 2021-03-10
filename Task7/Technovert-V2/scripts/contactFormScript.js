@@ -14,6 +14,16 @@ function updatePromoCode(){
     document.getElementById('promo').value = ''; 
 }
 
+function updateMobileHelp(){
+    var contactby = document.forms["contactForm"]["contactby"].value;
+    if(contactby === 'both' || contactby === 'phone')
+        document.getElementById('number').classList.add('required');
+    else { 
+        document.getElementById('number').classList.remove('required'); 
+        document.getElementById('mobileHelp').innerHTML = '';
+    }
+}
+
 function validateContactForm(){
     var name = document.forms["contactForm"]["your-name"].value;
 	var email = document.forms["contactForm"]["your-email"].value;
