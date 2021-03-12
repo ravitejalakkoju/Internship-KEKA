@@ -26,7 +26,7 @@ var calculate = function () {
     for (var i = 0; i < inputs.length; i++) {
         if (max < inputs[i].value)
             max = inputs[i].value;
-        if (1) {
+        if (inputs[i].checked) {
             sum += Number(inputs[i].value);
             count += 1;
         }
