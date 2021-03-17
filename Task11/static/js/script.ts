@@ -228,7 +228,7 @@ class Employee{
     }
     private createTabContent(): void{
         let html: string = `
-                <div class="tab-pane fade show ms-2 ms-lg-5 position-relative" id="v-pills-${this.eid}" role="tabpanel" aria-labelledby="v-pills-${this.eid}-tab">
+                <div class="tab-pane fade show ms-lg-5 position-relative" id="v-pills-${this.eid}" role="tabpanel" aria-labelledby="v-pills-${this.eid}-tab">
                     <div class="options small position-absolute top-0 end-0">
                         <button class="edit border-0 bg-transparent text-secondary edit-employee" value='${this.eid}'><i class="fas fa-pen me-1"></i>EDIT</button>
                         <button class="delete ms-md-2 border-0 bg-transparent text-secondary delete-employee" value='${this.eid}'><i class="fas fa-trash-alt me-1"></i>DELETE</button>
