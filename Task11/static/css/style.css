@@ -1,0 +1,93 @@
+html, body, ul {
+  margin: 0 !important;
+  margin-bottom: 5rem !important;
+  padding: 0 !important;
+  font-size: 17.5px;
+}
+
+.open-sans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.century-gothic {
+  font-family: 'Century Gothic';
+  src: url("./fonts/Century Gothic.eot");
+  src: url("./fonts/Century Gothic.eot?#iefix") format("embedded-opentype"), url("./fonts/Century Gothic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+header.bg-header {
+  background-color: #1695c7;
+}
+
+.navigation a, .navigation button {
+  color: white !important;
+  padding: 0.6rem 1rem !important;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: transparent;
+  border: 0;
+}
+
+.navigation a:hover, .navigation button:hover {
+  background-color: #db8300 !important;
+  border-left: 5px solid white;
+  color: black;
+}
+
+.home ul {
+  line-height: 1.5rem;
+}
+
+.active.nav-link {
+  background-color: rgba(68, 186, 255, 0.301) !important;
+  color: black !important;
+}
+
+.text-contact {
+  letter-spacing: 1px;
+}
+
+button.nav-link {
+  text-align: left !important;
+}
+
+.address {
+  word-wrap: break-word;
+  white-space: pre-line;
+}
+
+.tab-pane {
+  margin-top: -1.5rem !important;
+}
+
+#employee-form-div {
+  position: absolute;
+  z-index: 1;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+.edit:hover {
+  color: #0099ff !important;
+}
+
+.delete:hover {
+  color: red !important;
+}
+
+#close-form:hover {
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
