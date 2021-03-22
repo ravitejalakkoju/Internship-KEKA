@@ -27,18 +27,19 @@ class Employee{
                 <td class="d-none d-md-block border-0"></td>
             </tr>
         `;
-        $('#tableBody').append(html);
+        document.getElementById('tableBody').insertAdjacentHTML('beforeend', html);
     }
 }
 
 let check = (eids: string[]) => {
     for(let i = 0; i < 8; i++){
-        if($(`#${eids[i]}`).prop('checked') === false) return false;
+        if((<HTMLInputElement> document.getElementById(`${eids[i]}`)).checked === false) return false;
     }
     return true;
 };
 
-$(document).ready(() => {
+
+window.onload = () => {
     let employees: Array<Employee> = [];
     let names: string[] = ['Vijay Kumar', 'Sashi Kumar', 'Ravi Teja Lakkoju', 'Bharat Chillimunta', 'Nikhil Vemi', 'Pavan Kasukurthi', 'Pranay Suryapet', 'Varun Chittimella'];
     let scores: number[] = [34, 21, 38, 40, 27, 32, 15, 10];
@@ -46,25 +47,25 @@ $(document).ready(() => {
     for(let i = 0; i < 8; i++){
         employees.push(new Employee(eids[i], names[i], scores[i]));
     } 
-    $('#search').on('input change',() => {
-        let str: string = $('#search').val().toString();
+    ['input','change'].forEach((e) => { document.getElementById('search').addEventListener(e,() => {
+        let str: string = (<HTMLInputElement> document.getElementById('search')).value.toString();
         for(let i = 0; i < 8; i++){
             if(names[i].indexOf(str) >= 0){
                 let tempStr = names[i].replace(str, `<span style="background-color: gold; color: black;">${str}</span>`)
-                $(`#${eids[i]}-editable-name`).html(tempStr);
+                document.getElementById(`${eids[i]}-editable-name`).innerHTML = (tempStr);
             }
         }
-    });
-    $('#check-all').change((event) => {
-        let checked: any = $('#check-all').prop('checked');
+    }) });
+    document.getElementById('check-all').addEventListener('click',(event) => {
+        let checked: any = (<HTMLInputElement> document.getElementById('check-all')).checked;
         for(let i = 0; i < 8; i++){
-            $(`#${eids[i]}`).prop('checked', checked);
+            (<HTMLInputElement> document.getElementById(`${eids[i]}`)).checked = checked;
         }
     });
-    $('.employee-check').on('change', (element) =>{
-        $('#check-all').prop('checked', check(eids));    
-    });
-    $('#calculate').click(() => {
+    (document.querySelectorAll('.employee-check')).forEach(element => { element.addEventListener('change', (e) =>{
+        (<HTMLInputElement> document.getElementById('check-all')).checked = check(eids);    
+    }) });
+    document.getElementById('calculate').addEventListener('click', () => {
         let sum = 0, count = 0, max = -1, length = 8;
         for(let i = 0; i < length; i++){
             if(max < scores[i]) max = scores[i];
@@ -72,9 +73,9 @@ $(document).ready(() => {
             count += 1;
         }
         let avg = sum/count;
-        $('#average').html(avg.toString());
-        $('#maximum').html(max.toString());
+        document.getElementById('average').innerHTML = (avg.toString()); 
+        document.getElementById('maximum').innerHTML = (max.toString());
     });
-});
+};
 
 

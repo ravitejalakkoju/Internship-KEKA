@@ -35,3 +35,37 @@ var calculate = function () {
     document.getElementById('average').innerHTML = avg.toString();
     document.getElementById('maximum').innerHTML = max.toString();
 };
+
+
+// jquery
+
+
+$('#search').on('input change',() => {
+    let str: string = document.getElementById('search').nodeValue.toString();
+    for(let i = 0; i < 8; i++){
+        if(names[i].indexOf(str) >= 0){
+            let tempStr = names[i].replace(str, `<span style="background-color: gold; color: black;">${str}</span>`)
+            document.getElementById(`#${eids[i]}-editable-name`).innerHTML = (tempStr);
+        }
+    }
+});
+$('#check-all').change((event) => {
+    let checked: any = $('#check-all').prop('checked');
+    for(let i = 0; i < 8; i++){
+        $(`#${eids[i]}`).prop('checked', checked);
+    }
+});
+$('.employee-check').on('change', (element) =>{
+    $('#check-all').prop('checked', check(eids));    
+});
+$('#calculate').click(() => {
+    let sum = 0, count = 0, max = -1, length = 8;
+    for(let i = 0; i < length; i++){
+        if(max < scores[i]) max = scores[i];
+        sum += scores[i];
+        count += 1;
+    }
+    let avg = sum/count;
+    $('#average').html(avg.toString());
+    $('#maximum').html(max.toString());
+});
