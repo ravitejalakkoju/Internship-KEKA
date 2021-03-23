@@ -24,52 +24,60 @@ class Employee{
                 <td><input class="employee-name d-none" value="${this.name}" disabled><span id="${this.eid}-editable-name">${this.name}</span></td>
                 <td>${this.score}</td>
                 <td>${this.name.toLowerCase().split(' ')[0]}@technovert.com</td>
-                <td class="d-none d-md-block border-0"></td>
             </tr>
         `;
         document.getElementById('tableBody').insertAdjacentHTML('beforeend', html);
     }
 }
 
-let check = (eids: string[]) => {
-    for(let i = 0; i < 8; i++){
-        if((<HTMLInputElement> document.getElementById(`${eids[i]}`)).checked === false) return false;
+let check = (employees: Employee[]) => {
+    for(let i = 0; i < employees.length; i++){
+        if((<HTMLInputElement> document.getElementById(`${employees[i].getEid()}`)).checked === false) return false;
     }
     return true;
 };
 
+let createEmployees = () => {
+    let employees: Array<Employee> = [];
+    employees.push(new Employee('e1','Vijay Kumar', 32));
+    employees.push(new Employee('e2','Sashi Padagala', 40));
+    employees.push(new Employee('e3','Ravi Teja Lakkoju', 45));
+    employees.push(new Employee('e4','Bharat Chillimunta', 47));
+    employees.push(new Employee('e5','Nikhil Vemi', 38));
+    employees.push(new Employee('e6','Pavan Kasukurthi', 42));
+    employees.push(new Employee('e7','Pranay Suryapet', 20));
+    employees.push(new Employee('e8','Varun Chittimella', 46));
+    employees.push(new Employee('e9','Raghavendra', 30));
+    employees.push(new Employee('e10','Mano Sri Ram', 49));
+    return employees;
+}
+
 
 window.onload = () => {
-    let employees: Array<Employee> = [];
-    let names: string[] = ['Vijay Kumar', 'Sashi Kumar', 'Ravi Teja Lakkoju', 'Bharat Chillimunta', 'Nikhil Vemi', 'Pavan Kasukurthi', 'Pranay Suryapet', 'Varun Chittimella'];
-    let scores: number[] = [34, 21, 38, 40, 27, 32, 15, 10];
-    let eids: string[] = ['e1', 'e2', 'e3', 'e4', 'e5', 'e6', 'e7', 'e8'];
-    for(let i = 0; i < 8; i++){
-        employees.push(new Employee(eids[i], names[i], scores[i]));
-    } 
+    let employees: Array<Employee> = createEmployees();
     ['input','change'].forEach((e) => { document.getElementById('search').addEventListener(e,() => {
         let str: string = (<HTMLInputElement> document.getElementById('search')).value.toString();
-        for(let i = 0; i < 8; i++){
-            if(names[i].indexOf(str) >= 0){
-                let tempStr = names[i].replace(str, `<span style="background-color: gold; color: black;">${str}</span>`)
-                document.getElementById(`${eids[i]}-editable-name`).innerHTML = (tempStr);
+        for(let i = 0; i < employees.length; i++){
+            if(employees[i].getName().indexOf(str) >= 0){
+                let tempStr = employees[i].getName().replace(str, `<span style="background-color: gold; color: black;">${str}</span>`)
+                document.getElementById(`${employees[i].getEid()}-editable-name`).innerHTML = (tempStr);
             }
         }
     }) });
     document.getElementById('check-all').addEventListener('click',(event) => {
         let checked: any = (<HTMLInputElement> document.getElementById('check-all')).checked;
-        for(let i = 0; i < 8; i++){
-            (<HTMLInputElement> document.getElementById(`${eids[i]}`)).checked = checked;
+        for(let i = 0; i < employees.length; i++){
+            (<HTMLInputElement> document.getElementById(`${employees[i].getEid()}`)).checked = checked;
         }
     });
     (document.querySelectorAll('.employee-check')).forEach(element => { element.addEventListener('change', (e) =>{
-        (<HTMLInputElement> document.getElementById('check-all')).checked = check(eids);    
+        (<HTMLInputElement> document.getElementById('check-all')).checked = check(employees);    
     }) });
     document.getElementById('calculate').addEventListener('click', () => {
-        let sum = 0, count = 0, max = -1, length = 8;
+        let sum = 0, count = 0, max = -1, length = employees.length;
         for(let i = 0; i < length; i++){
-            if(max < scores[i]) max = scores[i];
-            sum += scores[i];
+            if(max < employees[i].getScore()) max = employees[i].getScore();
+            sum += employees[i].getScore();
             count += 1;
         }
         let avg = sum/count;
