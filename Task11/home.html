@@ -25,7 +25,7 @@
         <div class="container-fluid fs-6 p-0">
             <div class="collapse navbar-collapse small p-0" id="navbarNavAltMarkup">
                 <div class="navbar-nav roboto me-auto p-0 m-0">
-                    <a class="link text-start" href="./home.html" id="home">HOME</a>
+                    <a class="link text-start active" href="./home.html" id="home">HOME</a>
                     <button class="link text-start" id="addEmployee">+ADD</button>
                 </div>
                 <span class="navbar-text">
@@ -38,75 +38,87 @@
     <div id="address-book" class="m-3">
         <span class="text-contact roboto fw-bold small">CONTACTS</span>
         <div class="d-flex align-items-start mt-3 ps-2 pe-3 text-black row">
-            <div class="nav flex-column nav-pills col-lg-4 me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <div class="overflow-y col-lg-4 me-3">
+              <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 
+              </div>
             </div>
-            <div class="tab-content col-lg-7 pt-5 pt-lg-0 position-relative" id="v-pills-tabContent">
-                <div id="employee-form-div" class="m-15 mb-5 p-4 bg-white col-12">
-                  <div id="close-form"><i class="fa fa-close position-absolute" style="right: 1rem; top: 1rem;"></i></div>
-                    <form class="row g-3 needs-validation" method="POST" id="employee-form" validate>
-                        <div class="col-12 col-lg-10">
-                          <div class="col-md-12">
-                            <label for="employeeName" class="form-label m-0 small fw-bold">Name</label>
-                            <input type="text" name="name" class="form-control rounded-0 border-dark" id="name" >
-                            <div class="invalid-feedback" id="nameRequired">
-                              Name is required *
-                            </div>
+            <div class="tabContent col-lg-7 pt-5 pt-lg-0 position-relative">
+              <div id="employee-form-div" class="m-15 mb-5 p-4 bg-white col-12">
+                <div id="close-form"><i class="fa fa-close position-absolute" style="right: 1rem; top: 1rem;"></i></div>
+                  <form class="row g-3 needs-validation" method="POST" id="employee-form" validate>
+                      <div class="col-12 col-lg-10">
+                        <div class="col-md-12">
+                          <label for="employeeName" class="form-label m-0 small fw-bold">Name</label>
+                          <input type="text" name="name" class="form-control rounded-0 border-dark" id="name" >
+                          <div class="invalid-feedback" id="nameRequired">
+                            Name is required *
                           </div>
-                          <div class="col-md-12">
-                            <label for="email" class="form-label m-0 small fw-bold">Email</label>
-                            <div class="input-group has-validation">
-                              <span class="input-group-text border-dark rounded-0 border-right-0" id="inputGroupPrepend">@</span>
-                              <input type="email" name="email" class="form-control rounded-0 border-dark" id="email" aria-describedby="inputGroupPrepend" >
-                              <div class="invalid-feedback" id="emailHelp">
-                                Enter in correct pattern [eg., xyz.123_abc@hyd.co.in] ! 
-                              </div>
-                              <div class="invalid-feedback" id="emailRequired">
-                                Email is required *
-                              </div>
+                        </div>
+                        <div class="col-md-12">
+                          <label for="email" class="form-label m-0 small fw-bold">Email</label>
+                          <div class="input-group has-validation">
+                            <span class="input-group-text border-dark rounded-0 border-right-0" id="inputGroupPrepend">@</span>
+                            <input type="email" name="email" class="form-control rounded-0 border-dark" id="email" aria-describedby="inputGroupPrepend" >
+                            <div class="invalid-feedback" id="emailHelp">
+                              Enter in correct pattern [eg., xyz.123_abc@hyd.co.in] ! 
                             </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-md-6">
-                              <label for="mobileNum" class="form-label m-0 small fw-bold">Mobile</label>
-                              <input type="number" name="mobile" class="form-control rounded-0 border-dark" id="mobileNum" >
-                              <div class="invalid-feedback" id="mobileHelp">
-                                Please provide a valid Number.
-                              </div>
-                              <div class="invalid-feedback" id="mobileRequired">
-                                Mobile No. is required *
-                              </div>
+                            <div class="invalid-feedback" id="emailDuplicate">
+                              E-Mail already exists.
                             </div>
-                            <div class="col-md-6">
-                                <label for="landline" class="form-label m-0 small fw-bold">Landline</label>
-                                <input type="number" name="landline" class="form-control rounded-0 border-dark" id="landline">
-                                <div class="invalid-feedback" id="landlineRequired">
-                                  Landline is required *
-                                </div>
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <label for="website" class="form-label m-0 small fw-bold">Website</label>
-                            <input type="text" name="website" class="form-control rounded-0 border-dark" id="website" placeholder="eg., https://www.google.com  ">
-                            <div class="invalid-feedback" id="websiteHelp">
-                              Wrong Pattern !
-                            </div>
-                            <div class="invalid-feedback" id="websiteRequired">
-                              Website is required *
-                            </div>
-                          </div>
-                          <div class="col-md-12">
-                            <label for="address" class="form-label m-0 small fw-bold">Address</label>
-                            <textarea type="textarea" name="address" class="form-control rounded-0 border-dark" id="address"></textarea>
-                            <div class="invalid-feedback" id="addressRequired">
-                              Address is required *
+                            <div class="invalid-feedback" id="emailRequired">
+                              Email is required *
                             </div>
                           </div>
                         </div>
-                        <div class="col-12 d-flex justify-content-end" id="submit-button"></div>
-                      </form>
-                </div>
+                        <div class="row">
+                          <div class="col-md-6">
+                            <label for="mobileNum" class="form-label m-0 small fw-bold">Mobile</label>
+                            <input type="number" name="mobile" class="form-control rounded-0 border-dark" id="mobileNum" >
+                            <div class="invalid-feedback" id="mobileHelp">
+                              Please provide a valid Number.
+                            </div>
+                            <div class="invalid-feedback" id="mobileDuplicate">
+                              Mobile Number already exists.
+                            </div>
+                            <div class="invalid-feedback" id="mobileRequired">
+                              Mobile No. is required *
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                              <label for="landline" class="form-label m-0 small fw-bold">Landline</label>
+                              <input type="number" name="landline" class="form-control rounded-0 border-dark" id="landline">
+                              <div class="invalid-feedback" id="landlineRequired">
+                                Landline is required *
+                              </div>
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <label for="website" class="form-label m-0 small fw-bold">Website</label>
+                          <input type="text" name="website" class="form-control rounded-0 border-dark" id="website" placeholder="eg., https://www.google.com  ">
+                          <div class="invalid-feedback" id="websiteHelp">
+                            Wrong Pattern !
+                          </div>
+                          <div class="invalid-feedback" id="websiteRequired">
+                            Website is required *
+                          </div>
+                        </div>
+                        <div class="col-md-12">
+                          <label for="address" class="form-label m-0 small fw-bold">Address</label>
+                          <textarea type="textarea" name="address" class="form-control rounded-0 border-dark" id="address"></textarea>
+                          <div class="invalid-feedback" id="addressRequired">
+                            Address is required *
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 d-flex justify-content-end" id="submit-button"></div>
+                    </form>
+              </div>
+              <div class="tab-content" id="v-pills-tabContent">
+                
+              </div>
             </div>
+            
         </div>
     </div>
     <!-- Option 1: Bootstrap Bundle with Popper -->
