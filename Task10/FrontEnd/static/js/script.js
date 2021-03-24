@@ -1,6 +1,6 @@
 var Employee = /** @class */ (function () {
-    function Employee(eid, name, score) {
-        this.eid = eid;
+    function Employee(id, name, score) {
+        this.id = id;
         this.name = name;
         this.score = score;
         this.updateGrid();
@@ -11,18 +11,18 @@ var Employee = /** @class */ (function () {
     Employee.prototype.getScore = function () {
         return this.score;
     };
-    Employee.prototype.getEid = function () {
-        return this.eid;
+    Employee.prototype.getid = function () {
+        return this.id;
     };
     Employee.prototype.updateGrid = function () {
-        var html = "\n            <tr>\n                <th scope=\"row\"><input type=\"checkbox\" id=\"" + this.eid + "\" name=\"employee\" class=\"employee-check\" value=" + this.score + "></th>\n                <td><input class=\"employee-name d-none\" value=\"" + this.name + "\" disabled><span id=\"" + this.eid + "-editable-name\">" + this.name + "</span></td>\n                <td>" + this.score + "</td>\n                <td>" + this.name.toLowerCase().split(' ')[0] + "@technovert.com</td>\n            </tr>\n        ";
+        var html = "\n            <tr>\n                <th scope=\"row\"><input type=\"checkbox\" id=\"" + this.id + "\" name=\"employee\" class=\"employee-check\" value=" + this.score + "></th>\n                <td><input class=\"employee-name d-none\" value=\"" + this.name + "\" disabled><span id=\"" + this.id + "-editable-name\">" + this.name + "</span></td>\n                <td>" + this.score + "</td>\n                <td>" + this.name.toLowerCase().split(' ')[0] + "@technovert.com</td>\n            </tr>\n        ";
         document.getElementById('tableBody').insertAdjacentHTML('beforeend', html);
     };
     return Employee;
 }());
 var check = function (employees) {
     for (var i = 0; i < employees.length; i++) {
-        if (document.getElementById("" + employees[i].getEid()).checked === false)
+        if (document.getElementById("" + employees[i].getid()).checked === false)
             return false;
     }
     return true;
@@ -43,38 +43,46 @@ var createEmployees = function () {
 };
 window.onload = function () {
     var employees = createEmployees();
-    ['input', 'change'].forEach(function (e) {
-        document.getElementById('search').addEventListener(e, function () {
-            var str = document.getElementById('search').value.toString();
-            for (var i = 0; i < employees.length; i++) {
-                if (employees[i].getName().indexOf(str) >= 0) {
-                    var tempStr = employees[i].getName().replace(str, "<span style=\"background-color: gold; color: black;\">" + str + "</span>");
-                    document.getElementById(employees[i].getEid() + "-editable-name").innerHTML = (tempStr);
-                }
-            }
-        });
-    });
-    document.getElementById('check-all').addEventListener('click', function (event) {
-        var checked = document.getElementById('check-all').checked;
+    var searchSelector = document.getElementById('search');
+    var checkAllSelector = document.getElementById('check-all');
+    var calculateSelector = document.getElementById('calculate');
+    var eachEmployeeSelector = document.querySelectorAll('.employee-check');
+    var highlightName = function () {
+        var searchValue = searchSelector.value.toString();
         for (var i = 0; i < employees.length; i++) {
-            document.getElementById("" + employees[i].getEid()).checked = checked;
+            if (employees[i].getName().indexOf(searchValue) >= 0) {
+                var highlightedText = employees[i].getName().replace(searchValue, "<span style=\"background-color: gold; color: black;\">" + searchValue + "</span>");
+                document.getElementById(employees[i].getid() + "-editable-name").innerHTML = (highlightedText);
+            }
         }
-    });
-    (document.querySelectorAll('.employee-check')).forEach(function (element) {
-        element.addEventListener('change', function (e) {
-            document.getElementById('check-all').checked = check(employees);
-        });
-    });
-    document.getElementById('calculate').addEventListener('click', function () {
-        var sum = 0, count = 0, max = -1, length = employees.length;
-        for (var i = 0; i < length; i++) {
-            if (max < employees[i].getScore())
-                max = employees[i].getScore();
-            sum += employees[i].getScore();
-            count += 1;
+    };
+    var checkAllEmployees = function () {
+        var checked = checkAllSelector.checked;
+        for (var i = 0; i < employees.length; i++) {
+            document.getElementById("" + employees[i].getid()).checked = checked;
         }
-        var avg = sum / count;
+    };
+    var calculateSumAndMax = function () {
+        var max = Math.max.apply(Math, employees.map(function (o) { return o.getScore(); }));
+        var sum = employees.reduce(function (sum, score) { return sum + score.getScore(); }, 0);
+        var avg = sum / employees.length;
         document.getElementById('average').innerHTML = (avg.toString());
         document.getElementById('maximum').innerHTML = (max.toString());
+    };
+    ['input', 'change'].forEach(function (event) {
+        searchSelector.addEventListener(event, function () {
+            highlightName();
+        });
+    });
+    checkAllSelector.addEventListener('click', function (event) {
+        checkAllEmployees();
+    });
+    eachEmployeeSelector.forEach(function (element) {
+        element.addEventListener('change', function () {
+            checkAllSelector.checked = check(employees);
+        });
+    });
+    calculateSelector.addEventListener('click', function () {
+        calculateSumAndMax();
     });
 };

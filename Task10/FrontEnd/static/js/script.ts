@@ -1,9 +1,9 @@
 class Employee{
     private name: string;
     private score: number;
-    private eid: string;
-    constructor(eid: string, name: string, score: number){
-        this.eid = eid;
+    private id: string;
+    constructor(id: string, name: string, score: number){
+        this.id = id;
         this.name = name;
         this.score = score;
         this.updateGrid();
@@ -14,14 +14,14 @@ class Employee{
     getScore(): number{
         return this.score;
     }
-    getEid(): string{
-        return this.eid;
+    getid(): string{
+        return this.id;
     }
     updateGrid(){
         let html = `
             <tr>
-                <th scope="row"><input type="checkbox" id="${this.eid}" name="employee" class="employee-check" value=${this.score}></th>
-                <td><input class="employee-name d-none" value="${this.name}" disabled><span id="${this.eid}-editable-name">${this.name}</span></td>
+                <th scope="row"><input type="checkbox" id="${this.id}" name="employee" class="employee-check" value=${this.score}></th>
+                <td><input class="employee-name d-none" value="${this.name}" disabled><span id="${this.id}-editable-name">${this.name}</span></td>
                 <td>${this.score}</td>
                 <td>${this.name.toLowerCase().split(' ')[0]}@technovert.com</td>
             </tr>
@@ -32,7 +32,7 @@ class Employee{
 
 let check = (employees: Employee[]) => {
     for(let i = 0; i < employees.length; i++){
-        if((<HTMLInputElement> document.getElementById(`${employees[i].getEid()}`)).checked === false) return false;
+        if((<HTMLInputElement> document.getElementById(`${employees[i].getid()}`)).checked === false) return false;
     }
     return true;
 };
@@ -55,34 +55,54 @@ let createEmployees = () => {
 
 window.onload = () => {
     let employees: Array<Employee> = createEmployees();
-    ['input','change'].forEach((e) => { document.getElementById('search').addEventListener(e,() => {
-        let str: string = (<HTMLInputElement> document.getElementById('search')).value.toString();
+
+    let searchSelector = document.getElementById('search');
+    let checkAllSelector = document.getElementById('check-all');
+    let calculateSelector = document.getElementById('calculate');
+    let eachEmployeeSelector = document.querySelectorAll('.employee-check');
+
+    let highlightName = () => {
+        let searchValue: string = (<HTMLInputElement> searchSelector).value.toString();
         for(let i = 0; i < employees.length; i++){
-            if(employees[i].getName().indexOf(str) >= 0){
-                let tempStr = employees[i].getName().replace(str, `<span style="background-color: gold; color: black;">${str}</span>`)
-                document.getElementById(`${employees[i].getEid()}-editable-name`).innerHTML = (tempStr);
+            if(employees[i].getName().indexOf(searchValue) >= 0){
+                let highlightedText = employees[i].getName().replace(searchValue, `<span style="background-color: gold; color: black;">${searchValue}</span>`)
+                document.getElementById(`${employees[i].getid()}-editable-name`).innerHTML = (highlightedText);
             }
         }
-    }) });
-    document.getElementById('check-all').addEventListener('click',(event) => {
-        let checked: any = (<HTMLInputElement> document.getElementById('check-all')).checked;
+    }
+
+    let checkAllEmployees = () => {
+        let checked: any = (<HTMLInputElement> checkAllSelector).checked;
         for(let i = 0; i < employees.length; i++){
-            (<HTMLInputElement> document.getElementById(`${employees[i].getEid()}`)).checked = checked;
+            (<HTMLInputElement> document.getElementById(`${employees[i].getid()}`)).checked = checked;
         }
-    });
-    (document.querySelectorAll('.employee-check')).forEach(element => { element.addEventListener('change', (e) =>{
-        (<HTMLInputElement> document.getElementById('check-all')).checked = check(employees);    
-    }) });
-    document.getElementById('calculate').addEventListener('click', () => {
-        let sum = 0, count = 0, max = -1, length = employees.length;
-        for(let i = 0; i < length; i++){
-            if(max < employees[i].getScore()) max = employees[i].getScore();
-            sum += employees[i].getScore();
-            count += 1;
-        }
-        let avg = sum/count;
+    }
+
+    let calculateSumAndMax = () => {
+        const max = Math.max.apply(Math, employees.map(function(o) { return o.getScore(); }))
+        const sum = employees.reduce((sum: number, score: Employee) => { return sum + score.getScore()}, 0)
+
+        let avg = sum/employees.length;
+        
         document.getElementById('average').innerHTML = (avg.toString()); 
         document.getElementById('maximum').innerHTML = (max.toString());
+    }
+
+    ['input','change'].forEach((event) => { 
+        searchSelector.addEventListener(event,() => {
+            highlightName();
+    }) });
+
+    checkAllSelector.addEventListener('click',(event) => {
+        checkAllEmployees();
+    });
+
+    eachEmployeeSelector.forEach(element => { element.addEventListener('change', () =>{
+        (<HTMLInputElement> checkAllSelector).checked = check(employees);    
+    }) });
+
+    calculateSelector.addEventListener('click', () => {
+        calculateSumAndMax();
     });
 };
 
