@@ -1,3 +1,11 @@
+const inputChangeEvents: string[] = ['input', 'change'];
+const hide = (element: string) => {
+    document.getElementById(element).style.display = 'none';
+}
+const show = (element: string) => {
+    document.getElementById(element).style.display = 'block';
+}
+
 window.onload = () => {
     
     let validateEmail = (email: any) => {
@@ -13,63 +21,76 @@ window.onload = () => {
         return mobileRegExp.test(mobile);
     }
 
-    const inputChangeEvents: string[] = ['input', 'change'];
+    const formElements = {
+        name: document.getElementById('name'),
+        email: document.getElementById('email'),
+        mobileNum: document.getElementById('mobileNum'),
+        landline: document.getElementById('landline'),
+        website: document.getElementById('website'),
+        address: document.getElementById('address')
+    }
 
     let formValidation = () => {
 
-        inputChangeEvents.forEach((event) => document.getElementById('name').addEventListener(event,() => {
-            document.getElementById('nameRequired').style.display = 'none';
+        inputChangeEvents.forEach((event) => formElements.name.addEventListener(event,() => {
+            hide('nameRequired');
         }) );
-        inputChangeEvents.forEach((event) => document.getElementById('email').addEventListener(event,() => {
-            document.getElementById('emailRequired').style.display = 'none';
-            document.getElementById('emailDuplicate').style.display = 'none';
+
+        inputChangeEvents.forEach((event) => formElements.email.addEventListener(event,() => {
+            hide('emailRequired');
+            hide('emailDuplicate');
         }) );
-        inputChangeEvents.forEach((event) => document.getElementById('email').addEventListener(event,() => {
-            let email = (<HTMLInputElement> document.getElementById('email')).value;
-            validateEmail(email) ? document.getElementById('emailHelp').style.display = 'none' : document.getElementById('emailHelp').style.display = 'block';
+
+        inputChangeEvents.forEach((event) => formElements.email.addEventListener(event,() => {
+            let email = (<HTMLInputElement> formElements.email).value;
+            validateEmail(email) ? hide('emailHelp') : show('emailHelp');
         }) );
-        inputChangeEvents.forEach((event) => document.getElementById('mobileNum').addEventListener(event,() => {
-            document.getElementById('mobileRequired').style.display = 'none';
-            document.getElementById('mobileDuplicate').style.display = 'none';
-            let mobileNum = (<HTMLInputElement> document.getElementById('mobileNum')).value;
-            validateMobileNum(mobileNum.toString()) ? document.getElementById('mobileHelp').style.display = 'none' : document.getElementById('mobileHelp').style.display = 'block';
+
+        inputChangeEvents.forEach((event) => formElements.mobileNum.addEventListener(event,() => {
+            hide('mobileRequired');
+            hide('mobileDuplicate');
+            let mobileNum = (<HTMLInputElement> formElements.mobileNum).value;
+            validateMobileNum(mobileNum.toString()) ? hide('mobileHelp') : show('mobileHelp');
         }) );
-        inputChangeEvents.forEach((event) => document.getElementById('landline').addEventListener(event,() => {
-            document.getElementById('landlineRequired').style.display = 'none';
+
+        inputChangeEvents.forEach((event) => formElements.landline.addEventListener(event,() => {
+            hide('landlineRequired');
         }) );
-        inputChangeEvents.forEach((event) => document.getElementById('website').addEventListener(event,() => {
-            document.getElementById('websiteRequired').style.display = 'none';
-            let website = (document.getElementById('website') as HTMLInputElement).value;
-            validateWebpage(website) ? document.getElementById('websiteHelp').style.display = 'none' : document.getElementById('websiteHelp').style.display = 'block';
+
+        inputChangeEvents.forEach((event) => formElements.website.addEventListener(event,() => {
+            hide('websiteRequired');
+            let website = (formElements.website as HTMLInputElement).value;
+            validateWebpage(website) ? hide('websiteHelp') : show('websiteHelp');
         }) );
-        inputChangeEvents.forEach((event) => document.getElementById('address').addEventListener(event,() => {
-            document.getElementById('addressRequired').style.display = 'none';
+
+        inputChangeEvents.forEach((event) => formElements.address.addEventListener(event,() => {
+            hide('addressRequired')  ;
         }) );
 
     };
 
     formValidation();
 
-    document.getElementById('employee-form-div').style.display = 'none';
+    hide('employee-form-div');
 
     let addEmployeeFunc = () => {
         document.getElementById('addEmployee').classList.add('active');
-        document.getElementById('employee-form-div').style.display = 'block';
+        show('employee-form-div');
         (<HTMLFormElement> document.getElementById('employee-form')).reset();
         document.querySelectorAll('.invalid-feedback').forEach((e) => {
-            (<HTMLElement> e).style.display = 'none'
+            (<HTMLElement> e).style.display = 'none';
         });
-        document.getElementById('address').innerHTML = '';
+        formElements.address.innerHTML = '';
         document.getElementById('submit-button').innerHTML = (`<button class="btn me-2 btn-success rounded-0 p-1 ps-5 pe-5" type="submit" id="closeForm">Close</button><button class="btn btn-success rounded-0 p-1 ps-5 pe-5" type="submit" id="submitEmployee">Add</button>`);
         document.getElementById('employee-form-div').scrollIntoView();
     };
 
     let closeForm = () => {
         document.querySelectorAll('.invalid-feedback').forEach((e) => {
-            (<HTMLElement> e).style.display = 'none'
+            (<HTMLElement> e).style.display = 'none';
         });
         document.getElementById('addEmployee').classList.remove('active');
-        document.getElementById('employee-form-div').style.display = 'none';
+        hide('employee-form-div');
         (<HTMLFormElement> document.getElementById('employee-form')).reset();
     }
 
@@ -93,8 +114,6 @@ window.onload = () => {
         }
     });
 
-    let employeeList = new Employees();
-
     let serializeArray = (form) => {
         let formDetails: { name: string, value: string }[] = [];
         form.querySelectorAll('input').forEach(element => {
@@ -109,7 +128,7 @@ window.onload = () => {
         let returnValue: Boolean = true;
         for(let i = 0; i < employee.length; i++){
             if(employee[i].value.length < 1 && i != 3 && i !== 4){
-                document.getElementById(`${employee[i].name + 'Required'}`).style.display = 'block';
+                show(`${employee[i].name + 'Required'}`);
                 returnValue = false;
             }
         }
@@ -118,20 +137,20 @@ window.onload = () => {
         e.preventDefault();
         if(!returnValue) return false;
         document.getElementById('addEmployee').classList.remove('active');
-        document.getElementById('employee-form-div').style.display = 'none';
+        hide('employee-form-div');
         (<HTMLFormElement> document.getElementById('employee-form')).reset();
     };
 
     let editEmployee = (e) =>{
         let id = e.target.value;
-        document.getElementById('employee-form-div').style.display = 'block';
+        show('employee-form-div');
         let el: Employee = employeeList.getEmployee(id);
         (<HTMLInputElement> document.querySelector('input[name="name"]')).value = (el.getName());
         (<HTMLInputElement> document.querySelector('input[name="email"]')).value = (el.getEmail());
         (<HTMLInputElement> document.querySelector('input[name="mobile"]')).value = (el.getMobile());
         (<HTMLInputElement> document.querySelector('input[name="landline"]')).value = (el.getLandline());
         (<HTMLInputElement> document.querySelector('input[name="website"]')).value = (el.getWebsite());
-        document.getElementById('address').innerHTML = (el.getAddress());
+        formElements.address.innerHTML = (el.getAddress());
         document.getElementById('submit-button').innerHTML = (`<button class="btn me-2 btn-success rounded-0 p-1 ps-5 pe-5" type="submit" id="closeForm">Close</button><button class="btn btn-success rounded-0 p-1 ps-5 pe-5" type="submit" value="${id}" id="saveEmployee">Save</button>`);
         document.getElementById('employee-form-div').scrollIntoView();
     };
@@ -141,7 +160,7 @@ window.onload = () => {
         let returnValue: Boolean = true;
         for(let i = 0; i < employee.length - 3; i++){
             if(employee[i].value.length < 1 && i != 3 && i !== 4){
-                document.getElementById(`${employee[i].name + 'Required'}`).style.display = 'block';
+                show(`${employee[i].name + 'Required'}`);
                 returnValue = false;
             }
         }
@@ -150,13 +169,16 @@ window.onload = () => {
         e.preventDefault();
         if(!returnValue) return false;
         (<HTMLFormElement> document.getElementById('employee-form')).reset();
-        document.getElementById('address').innerHTML = ('');
-        document.getElementById('employee-form-div').style.display = 'none';
+        formElements.address.innerHTML = ('');
+        hide('employee-form-div');
+        ;
     };
 
     let deleteEmployee =  (e) => {
         if(confirm('Are you sure you want to delete the contact ?')) employeeList.delete(e.target.value);
     };
+
+    let employeeList = new Employees();
 
     document.getElementById('submit-button').addEventListener('click', (e) => {
         e.preventDefault();
@@ -184,7 +206,7 @@ class Employees{
         let returnValue = true;
         this.employees.forEach((em) => {
             if(em.getEmail() === email && em.getid() !== id){
-                document.getElementById('emailDuplicate').style.display = 'block';
+                show('emailDuplicate');
                 returnValue = false;
             }
         })
@@ -195,7 +217,7 @@ class Employees{
         let returnValue = true;
         this.employees.forEach((em) => {
             if(em.getMobile() === mobile && em.getid() !== id){
-                document.getElementById('mobileDuplicate').style.display = 'block';
+                show('mobileDuplicate');
                 returnValue = false;
             } 
         })

@@ -1,3 +1,10 @@
+var inputChangeEvents = ['input', 'change'];
+var hide = function (element) {
+    document.getElementById(element).style.display = 'none';
+};
+var show = function (element) {
+    document.getElementById(element).style.display = 'block';
+};
 window.onload = function () {
     var validateEmail = function (email) {
         var emailRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -11,47 +18,54 @@ window.onload = function () {
         var mobileRegExp = /^\d{10}$/;
         return mobileRegExp.test(mobile);
     };
-    var inputChangeEvents = ['input', 'change'];
+    var formElements = {
+        name: document.getElementById('name'),
+        email: document.getElementById('email'),
+        mobileNum: document.getElementById('mobileNum'),
+        landline: document.getElementById('landline'),
+        website: document.getElementById('website'),
+        address: document.getElementById('address')
+    };
     var formValidation = function () {
-        inputChangeEvents.forEach(function (event) { return document.getElementById('name').addEventListener(event, function () {
-            document.getElementById('nameRequired').style.display = 'none';
+        inputChangeEvents.forEach(function (event) { return formElements.name.addEventListener(event, function () {
+            hide('nameRequired');
         }); });
-        inputChangeEvents.forEach(function (event) { return document.getElementById('email').addEventListener(event, function () {
-            document.getElementById('emailRequired').style.display = 'none';
-            document.getElementById('emailDuplicate').style.display = 'none';
+        inputChangeEvents.forEach(function (event) { return formElements.email.addEventListener(event, function () {
+            hide('emailRequired');
+            hide('emailDuplicate');
         }); });
-        inputChangeEvents.forEach(function (event) { return document.getElementById('email').addEventListener(event, function () {
-            var email = document.getElementById('email').value;
-            validateEmail(email) ? document.getElementById('emailHelp').style.display = 'none' : document.getElementById('emailHelp').style.display = 'block';
+        inputChangeEvents.forEach(function (event) { return formElements.email.addEventListener(event, function () {
+            var email = formElements.email.value;
+            validateEmail(email) ? hide('emailHelp') : show('emailHelp');
         }); });
-        inputChangeEvents.forEach(function (event) { return document.getElementById('mobileNum').addEventListener(event, function () {
-            document.getElementById('mobileRequired').style.display = 'none';
-            document.getElementById('mobileDuplicate').style.display = 'none';
-            var mobileNum = document.getElementById('mobileNum').value;
-            validateMobileNum(mobileNum.toString()) ? document.getElementById('mobileHelp').style.display = 'none' : document.getElementById('mobileHelp').style.display = 'block';
+        inputChangeEvents.forEach(function (event) { return formElements.mobileNum.addEventListener(event, function () {
+            hide('mobileRequired');
+            hide('mobileDuplicate');
+            var mobileNum = formElements.mobileNum.value;
+            validateMobileNum(mobileNum.toString()) ? hide('mobileHelp') : show('mobileHelp');
         }); });
-        inputChangeEvents.forEach(function (event) { return document.getElementById('landline').addEventListener(event, function () {
-            document.getElementById('landlineRequired').style.display = 'none';
+        inputChangeEvents.forEach(function (event) { return formElements.landline.addEventListener(event, function () {
+            hide('landlineRequired');
         }); });
-        inputChangeEvents.forEach(function (event) { return document.getElementById('website').addEventListener(event, function () {
-            document.getElementById('websiteRequired').style.display = 'none';
-            var website = document.getElementById('website').value;
-            validateWebpage(website) ? document.getElementById('websiteHelp').style.display = 'none' : document.getElementById('websiteHelp').style.display = 'block';
+        inputChangeEvents.forEach(function (event) { return formElements.website.addEventListener(event, function () {
+            hide('websiteRequired');
+            var website = formElements.website.value;
+            validateWebpage(website) ? hide('websiteHelp') : show('websiteHelp');
         }); });
-        inputChangeEvents.forEach(function (event) { return document.getElementById('address').addEventListener(event, function () {
-            document.getElementById('addressRequired').style.display = 'none';
+        inputChangeEvents.forEach(function (event) { return formElements.address.addEventListener(event, function () {
+            hide('addressRequired');
         }); });
     };
     formValidation();
-    document.getElementById('employee-form-div').style.display = 'none';
+    hide('employee-form-div');
     var addEmployeeFunc = function () {
         document.getElementById('addEmployee').classList.add('active');
-        document.getElementById('employee-form-div').style.display = 'block';
+        show('employee-form-div');
         document.getElementById('employee-form').reset();
         document.querySelectorAll('.invalid-feedback').forEach(function (e) {
             e.style.display = 'none';
         });
-        document.getElementById('address').innerHTML = '';
+        formElements.address.innerHTML = '';
         document.getElementById('submit-button').innerHTML = ("<button class=\"btn me-2 btn-success rounded-0 p-1 ps-5 pe-5\" type=\"submit\" id=\"closeForm\">Close</button><button class=\"btn btn-success rounded-0 p-1 ps-5 pe-5\" type=\"submit\" id=\"submitEmployee\">Add</button>");
         document.getElementById('employee-form-div').scrollIntoView();
     };
@@ -60,7 +74,7 @@ window.onload = function () {
             e.style.display = 'none';
         });
         document.getElementById('addEmployee').classList.remove('active');
-        document.getElementById('employee-form-div').style.display = 'none';
+        hide('employee-form-div');
         document.getElementById('employee-form').reset();
     };
     document.getElementById('addEmployee').addEventListener('click', function () {
@@ -79,7 +93,6 @@ window.onload = function () {
             closeForm();
         }
     });
-    var employeeList = new Employees();
     var serializeArray = function (form) {
         var formDetails = [];
         form.querySelectorAll('input').forEach(function (element) {
@@ -93,7 +106,7 @@ window.onload = function () {
         var returnValue = true;
         for (var i = 0; i < employee.length; i++) {
             if (employee[i].value.length < 1 && i != 3 && i !== 4) {
-                document.getElementById("" + (employee[i].name + 'Required')).style.display = 'block';
+                show("" + (employee[i].name + 'Required'));
                 returnValue = false;
             }
         }
@@ -104,19 +117,19 @@ window.onload = function () {
         if (!returnValue)
             return false;
         document.getElementById('addEmployee').classList.remove('active');
-        document.getElementById('employee-form-div').style.display = 'none';
+        hide('employee-form-div');
         document.getElementById('employee-form').reset();
     };
     var editEmployee = function (e) {
         var id = e.target.value;
-        document.getElementById('employee-form-div').style.display = 'block';
+        show('employee-form-div');
         var el = employeeList.getEmployee(id);
         document.querySelector('input[name="name"]').value = (el.getName());
         document.querySelector('input[name="email"]').value = (el.getEmail());
         document.querySelector('input[name="mobile"]').value = (el.getMobile());
         document.querySelector('input[name="landline"]').value = (el.getLandline());
         document.querySelector('input[name="website"]').value = (el.getWebsite());
-        document.getElementById('address').innerHTML = (el.getAddress());
+        formElements.address.innerHTML = (el.getAddress());
         document.getElementById('submit-button').innerHTML = ("<button class=\"btn me-2 btn-success rounded-0 p-1 ps-5 pe-5\" type=\"submit\" id=\"closeForm\">Close</button><button class=\"btn btn-success rounded-0 p-1 ps-5 pe-5\" type=\"submit\" value=\"" + id + "\" id=\"saveEmployee\">Save</button>");
         document.getElementById('employee-form-div').scrollIntoView();
     };
@@ -125,7 +138,7 @@ window.onload = function () {
         var returnValue = true;
         for (var i = 0; i < employee.length - 3; i++) {
             if (employee[i].value.length < 1 && i != 3 && i !== 4) {
-                document.getElementById("" + (employee[i].name + 'Required')).style.display = 'block';
+                show("" + (employee[i].name + 'Required'));
                 returnValue = false;
             }
         }
@@ -136,13 +149,15 @@ window.onload = function () {
         if (!returnValue)
             return false;
         document.getElementById('employee-form').reset();
-        document.getElementById('address').innerHTML = ('');
-        document.getElementById('employee-form-div').style.display = 'none';
+        formElements.address.innerHTML = ('');
+        hide('employee-form-div');
+        ;
     };
     var deleteEmployee = function (e) {
         if (confirm('Are you sure you want to delete the contact ?'))
             employeeList["delete"](e.target.value);
     };
+    var employeeList = new Employees();
     document.getElementById('submit-button').addEventListener('click', function (e) {
         e.preventDefault();
         if (e.target.id === 'submitEmployee')
@@ -170,7 +185,7 @@ var Employees = /** @class */ (function () {
         var returnValue = true;
         this.employees.forEach(function (em) {
             if (em.getEmail() === email && em.getid() !== id) {
-                document.getElementById('emailDuplicate').style.display = 'block';
+                show('emailDuplicate');
                 returnValue = false;
             }
         });
@@ -180,7 +195,7 @@ var Employees = /** @class */ (function () {
         var returnValue = true;
         this.employees.forEach(function (em) {
             if (em.getMobile() === mobile && em.getid() !== id) {
-                document.getElementById('mobileDuplicate').style.display = 'block';
+                show('mobileDuplicate');
                 returnValue = false;
             }
         });

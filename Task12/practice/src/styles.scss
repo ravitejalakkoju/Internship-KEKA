@@ -88,10 +88,6 @@ button.nav-link{
     white-space: pre-line;
 }
 
-.tab-pane{
-    margin-top: -1.5rem !important;
-}
-
 #employee-form-div{
     position: absolute;
     z-index: 1;
@@ -104,31 +100,8 @@ button.nav-link{
     outline: none !important;
 }
 
-.edit:hover{
-    color: rgb(0, 153, 255) !important;
-}
 
-.delete:hover{
-    color: red !important;
-}
 
 #close-form:hover{
     cursor: pointer;
-}
-
-.overflow-y{
-    max-height: 65vh;
-    overflow-y: scroll;
-}
-
-.overflow-y::-webkit-scrollbar {
-  width: 0.5em;
-}
- 
-.overflow-y::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
-}
- 
-.overflow-y::-webkit-scrollbar-thumb {
-  background-color: $navbg;
 }
