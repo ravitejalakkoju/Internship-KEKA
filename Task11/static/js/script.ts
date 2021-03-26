@@ -20,6 +20,9 @@ window.onload = () => {
         const mobileRegExp = /^\d{10}$/;
         return mobileRegExp.test(mobile);
     }
+    let resetEmployeeForm = () => {
+        (<HTMLFormElement> document.getElementById('employee-form')).reset();
+    }
 
     const formElements = {
         name: document.getElementById('name'),
@@ -76,7 +79,7 @@ window.onload = () => {
     let addEmployeeFunc = () => {
         document.getElementById('addEmployee').classList.add('active');
         show('employee-form-div');
-        (<HTMLFormElement> document.getElementById('employee-form')).reset();
+        resetEmployeeForm();
         document.querySelectorAll('.invalid-feedback').forEach((e) => {
             (<HTMLElement> e).style.display = 'none';
         });
@@ -91,7 +94,7 @@ window.onload = () => {
         });
         document.getElementById('addEmployee').classList.remove('active');
         hide('employee-form-div');
-        (<HTMLFormElement> document.getElementById('employee-form')).reset();
+        resetEmployeeForm();
     }
 
     document.getElementById('addEmployee').addEventListener('click', () => {
@@ -113,9 +116,9 @@ window.onload = () => {
             closeForm();
         }
     });
-
+    interface inputSchema { name: string, value: string };
     let serializeArray = (form) => {
-        let formDetails: { name: string, value: string }[] = [];
+        let formDetails: inputSchema[] = [];
         form.querySelectorAll('input').forEach(element => {
             formDetails.push({name: element.name, value: element.value});
         });
@@ -138,18 +141,18 @@ window.onload = () => {
         if(!returnValue) return false;
         document.getElementById('addEmployee').classList.remove('active');
         hide('employee-form-div');
-        (<HTMLFormElement> document.getElementById('employee-form')).reset();
+        resetEmployeeForm();
     };
 
     let editEmployee = (e) =>{
         let id = e.target.value;
         show('employee-form-div');
         let el: Employee = employeeList.getEmployee(id);
-        (<HTMLInputElement> document.querySelector('input[name="name"]')).value = (el.getName());
-        (<HTMLInputElement> document.querySelector('input[name="email"]')).value = (el.getEmail());
-        (<HTMLInputElement> document.querySelector('input[name="mobile"]')).value = (el.getMobile());
-        (<HTMLInputElement> document.querySelector('input[name="landline"]')).value = (el.getLandline());
-        (<HTMLInputElement> document.querySelector('input[name="website"]')).value = (el.getWebsite());
+        (<HTMLInputElement> formElements.name).value = (el.getName());
+        (<HTMLInputElement> formElements.email).value = (el.getEmail());
+        (<HTMLInputElement> formElements.mobileNum).value = (el.getMobile());
+        (<HTMLInputElement> formElements.landline).value = (el.getLandline());
+        (<HTMLInputElement> formElements.website).value = (el.getWebsite());
         formElements.address.innerHTML = (el.getAddress());
         document.getElementById('submit-button').innerHTML = (`<button class="btn me-2 btn-success rounded-0 p-1 ps-5 pe-5" type="submit" id="closeForm">Close</button><button class="btn btn-success rounded-0 p-1 ps-5 pe-5" type="submit" value="${id}" id="saveEmployee">Save</button>`);
         document.getElementById('employee-form-div').scrollIntoView();
@@ -168,7 +171,7 @@ window.onload = () => {
         returnValue = employeeList.update(e.target.value, employee[0].value, employee[1].value, employee[2].value, employee[3].value, employee[4].value,employee[5].value);
         e.preventDefault();
         if(!returnValue) return false;
-        (<HTMLFormElement> document.getElementById('employee-form')).reset();
+        resetEmployeeForm();
         formElements.address.innerHTML = ('');
         hide('employee-form-div');
         ;

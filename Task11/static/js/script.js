@@ -18,6 +18,9 @@ window.onload = function () {
         var mobileRegExp = /^\d{10}$/;
         return mobileRegExp.test(mobile);
     };
+    var resetEmployeeForm = function () {
+        document.getElementById('employee-form').reset();
+    };
     var formElements = {
         name: document.getElementById('name'),
         email: document.getElementById('email'),
@@ -61,7 +64,7 @@ window.onload = function () {
     var addEmployeeFunc = function () {
         document.getElementById('addEmployee').classList.add('active');
         show('employee-form-div');
-        document.getElementById('employee-form').reset();
+        resetEmployeeForm();
         document.querySelectorAll('.invalid-feedback').forEach(function (e) {
             e.style.display = 'none';
         });
@@ -75,7 +78,7 @@ window.onload = function () {
         });
         document.getElementById('addEmployee').classList.remove('active');
         hide('employee-form-div');
-        document.getElementById('employee-form').reset();
+        resetEmployeeForm();
     };
     document.getElementById('addEmployee').addEventListener('click', function () {
         addEmployeeFunc();
@@ -93,6 +96,7 @@ window.onload = function () {
             closeForm();
         }
     });
+    ;
     var serializeArray = function (form) {
         var formDetails = [];
         form.querySelectorAll('input').forEach(function (element) {
@@ -118,17 +122,17 @@ window.onload = function () {
             return false;
         document.getElementById('addEmployee').classList.remove('active');
         hide('employee-form-div');
-        document.getElementById('employee-form').reset();
+        resetEmployeeForm();
     };
     var editEmployee = function (e) {
         var id = e.target.value;
         show('employee-form-div');
         var el = employeeList.getEmployee(id);
-        document.querySelector('input[name="name"]').value = (el.getName());
-        document.querySelector('input[name="email"]').value = (el.getEmail());
-        document.querySelector('input[name="mobile"]').value = (el.getMobile());
-        document.querySelector('input[name="landline"]').value = (el.getLandline());
-        document.querySelector('input[name="website"]').value = (el.getWebsite());
+        formElements.name.value = (el.getName());
+        formElements.email.value = (el.getEmail());
+        formElements.mobileNum.value = (el.getMobile());
+        formElements.landline.value = (el.getLandline());
+        formElements.website.value = (el.getWebsite());
         formElements.address.innerHTML = (el.getAddress());
         document.getElementById('submit-button').innerHTML = ("<button class=\"btn me-2 btn-success rounded-0 p-1 ps-5 pe-5\" type=\"submit\" id=\"closeForm\">Close</button><button class=\"btn btn-success rounded-0 p-1 ps-5 pe-5\" type=\"submit\" value=\"" + id + "\" id=\"saveEmployee\">Save</button>");
         document.getElementById('employee-form-div').scrollIntoView();
@@ -148,7 +152,7 @@ window.onload = function () {
         e.preventDefault();
         if (!returnValue)
             return false;
-        document.getElementById('employee-form').reset();
+        resetEmployeeForm();
         formElements.address.innerHTML = ('');
         hide('employee-form-div');
         ;

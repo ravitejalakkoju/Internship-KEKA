@@ -30,7 +30,7 @@ class Employee{
     }
 }
 
-let check = (employees: Employee[]) => {
+let allEmployeesChecked = (employees: Employee[]) => {
     for(let i = 0; i < employees.length; i++){
         if((<HTMLInputElement> document.getElementById(`${employees[i].getid()}`)).checked === false) return false;
     }
@@ -98,7 +98,7 @@ window.onload = () => {
     });
 
     eachEmployeeSelector.forEach(element => { element.addEventListener('change', () =>{
-        (<HTMLInputElement> checkAllSelector).checked = check(employees);    
+        (<HTMLInputElement> checkAllSelector).checked = allEmployeesChecked(employees);    
     }) });
 
     calculateSelector.addEventListener('click', () => {
