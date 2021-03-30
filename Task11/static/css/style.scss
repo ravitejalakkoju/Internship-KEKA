@@ -126,9 +126,9 @@ button.nav-link{
 }
  
 .overflow-y::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 2px rgba(39, 39, 39, 0.3);
 }
  
 .overflow-y::-webkit-scrollbar-thumb {
-  background-color: $navbg;
+  background-color: rgb(190, 190, 190);
 }

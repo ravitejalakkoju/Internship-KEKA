@@ -40,6 +40,7 @@ window.onload = function () {
         inputChangeEvents.forEach(function (event) { return formElements.email.addEventListener(event, function () {
             var email = formElements.email.value;
             validateEmail(email) ? hide('emailHelp') : show('emailHelp');
+            employeeList.emailCheck(email, 'e') ? hide('emailDuplicate') : show('emailDuplicate');
         }); });
         inputChangeEvents.forEach(function (event) { return formElements.mobileNum.addEventListener(event, function () {
             hide('mobileRequired');
@@ -184,6 +185,11 @@ var Employees = /** @class */ (function () {
         this.employees = [];
         this.add(new Employee('e' + this.employees.length, 'Praveen Battula', 'praveen@technovert.com', '9292929232', '040301231215', 'http://www.technovert.com', '123 now here, Some street, Madhapur, Hyderabad 500033'));
         this.add(new Employee('e' + this.employees.length, 'Chandermani Arora', 'chandermani@technovert.com', '9292929222', '040301231211', 'http://www.technovert.com', '123 now here, Some street, Madhapur, Hyderabad 500033'));
+        this.add(new Employee('e' + this.employees.length, 'Pavan Kasukurthi', 'pavan@technovert.com', '9951282998', '040301231211', 'http://www.technovert.com', '123 now here, Some street, Madhapur, Hyderabad 500033'));
+        this.add(new Employee('e' + this.employees.length, 'Pranay Suryapet', 'pranay@technovert.com', '9292929224', '040301231211', 'http://www.technovert.com', '123 now here, Some street, Madhapur, Hyderabad 500033'));
+        this.add(new Employee('e' + this.employees.length, 'Varun Chittimella', 'varun@technovert.com', '9292929223', '040301231211', 'http://www.technovert.com', '123 now here, Some street, Madhapur, Hyderabad 500033'));
+        this.add(new Employee('e' + this.employees.length, 'Nikhil Reddy', 'nikhil@technovert.com', '9292929239', '040301231211', 'http://www.technovert.com', '123 now here, Some street, Madhapur, Hyderabad 500033'));
+        this.add(new Employee('e' + this.employees.length, 'Bharat Chillimunta', 'bharat@technovert.com', '9292959239', '040301231211', 'http://www.technovert.com', '123 now here, Some street, Madhapur, Hyderabad 500033'));
     }
     Employees.prototype.emailCheck = function (email, id) {
         var returnValue = true;
