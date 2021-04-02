@@ -1,0 +1,27 @@
+<div *ngIf="employee; else elseBlock" class="tabContent pt-5 pt-lg-0 position-relative">
+    <div class="tab-pane fade show ms-lg-5 position-relative" id="v-pills-tab" role="tabpanel" aria-labelledby="v-pills-id-tab">
+        <div class="options small position-absolute top-0 end-0">
+            <button class="edit border-0 bg-transparent text-secondary edit-employee" [routerLink]="['edit']"><i class="fas fa-pen me-1"></i>EDIT</button>
+            <button class="delete ms-md-2 border-0 bg-transparent text-secondary delete-employee" (click)="deleteEmployee()"><i class="fas fa-trash-alt me-1"></i>DELETE</button>
+        </div>
+        <div id="v-pills-${employee.id}-details">
+            <span class="fs-4">
+                {{employee.name}}
+            </span>
+            <ul class="list-unstyled small text-dark">
+                <li class="mt-2 mb-2">Email: {{employee.email}}</li>
+                <li class="mt-2 mb-2">
+                    Mobile: +91 {{employee.mobile}} <br>    
+                    Landline: {{employee.landline}}
+                </li>
+                <li class="mt-2 mb-2">Website: {{employee.website}}</li>
+                <li class="mt-2 mb-2">
+                Address: <span class="roboto" style="font-size: 0.85rem; white-space: pre-wrap;">{{employee.address}}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<ng-template #elseBlock>
+    <div class="bg-light text-center text-secondary p-5">No such contact exist [ wrong route ]</div>
+</ng-template>

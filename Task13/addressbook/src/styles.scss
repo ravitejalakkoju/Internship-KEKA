@@ -1,0 +1,34 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+// General
+
+html, body, ul{
+    margin: 0 !important;
+    margin-bottom: 5rem !important;
+    padding: 0 !important;
+    font-size: 17.5px;
+}
+
+
+.open-sans{
+    font-family: 'Open Sans', sans-serif;
+}
+
+.century-gothic{
+    font-family: 'Century Gothic';
+    src: url('./fonts/Century Gothic.eot');
+    src: url('./fonts/Century Gothic.eot?#iefix') format('embedded-opentype'),
+        url('./fonts/Century Gothic.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.roboto{
+    font-family: 'Roboto', sans-serif;
+}
+
+ 
+*:focus{
+    outline: none !important;
+}
