@@ -1,0 +1,69 @@
+<div id="employee-form-div" class="mb-5 p-4 bg-white col-11 col-lg-7">
+    <a (click)="goBack()"><i class="fa fa-close position-absolute" style="right: 1rem; top: 1rem;"></i></a>
+        <form class="row g-3 needs-validation" [formGroup]="employeeForm" (ngSubmit)="onSubmit()" novalidate>
+            <div class="col-12 col-lg-11 col-xl-10">
+                <div class="col-md-12">
+                    <label for="employeeName" class="form-label m-0 small fw-bold">Name</label>
+                    <input type="text" formControlName="name" 
+                    [class.is-invalid]="name.invalid && name.touched" class="form-control rounded-0 border-dark" required>
+                    <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required *</small>
+                </div>
+                <div class="col-md-12">
+                    <label for="email" class="form-label m-0 small fw-bold">Email</label>
+                    <div class="input-group has-validation">
+                        <span class="input-group-text border-dark rounded-0 border-right-0" id="inputGroupPrepend">@</span>
+                        <input type="email" [class.is-invalid]="email.invalid && email.touched" formControlName="email" class="form-control rounded-0 border-dark" 
+                        aria-describedby="inputGroupPrepend" required>
+                        <div *ngIf="email.invalid && email.touched" class="col-12">
+                            <small *ngIf="email.errors?.required" class="text-danger">Email is required * </small>
+                            <small *ngIf="email.errors?.pattern" class="text-danger">Enter in correct pattern [eg., xyz.123_abc@hyd.co.in] ! </small>
+                            <small *ngIf="email.errors?.duplicate" class="text-danger col-12">E-Mail already exists.</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="mobileNum" class="form-label m-0 small fw-bold">Mobile</label>
+                        <input type="number" formControlName="mobile" [class.is-invalid]="name.invalid && name.touched" class="form-control rounded-0 border-dark" required>
+                        <div *ngIf="mobile.invalid && mobile.touched">
+                            <small *ngIf="mobile.errors?.required" class="text-danger">Mobile No. is required *</small>
+                            <small *ngIf="mobile.errors?.pattern" class="text-danger">Phone Number should be of 10 Digits.</small>
+                            <small *ngIf="mobile.errors?.duplicate" class="text-danger">Mobile Number already exists.</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="landline" class="form-label m-0 small fw-bold">Landline</label>
+                        <input type="number" formControlName="landline" class="form-control rounded-0 border-dark">
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label for="website" class="form-label m-0 small fw-bold">Website</label>
+                    <input type="url" formControlName="website" class="form-control rounded-0 border-dark" 
+                        placeholder="eg., www.google.com  ">
+                    <div *ngIf="website.invalid && website.touched">
+                        <small *ngIf="website.errors?.pattern" class="text-danger">Wrong Pattern !</small>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <label for="address" class="form-label m-0 small fw-bold">Address</label>
+                    <textarea type="textarea" formControlName="address" 
+                        [class.is-invalid]="name.invalid && name.touched" class="form-control rounded-0 border-dark" required>
+                    </textarea>
+                    <small [class.d-none]="address.valid || address.untouched" class="text-danger">Address is required *</small>
+                </div>
+            </div>
+          <div class="col-12 d-flex justify-content-end">
+            <a class="btn me-2 btn-success rounded-0 p-1 ps-5 pe-5" (click)="goBack()">Close</a>
+            <div *ngIf="add; then thenblock else elseblock"></div>
+            <ng-template #thenblock>
+                <button class="btn btn-success rounded-0 p-1 ps-5 pe-5" 
+                    [disabled]="!employeeForm.valid" type="submit">Add</button>
+            </ng-template>
+            <ng-template #elseblock>
+                <button class="btn btn-success rounded-0 p-1 ps-5 pe-5" 
+                    [disabled]="!employeeForm.valid" type="submit">Save</button>
+            </ng-template>
+          </div>
+
+        </form>
+</div>

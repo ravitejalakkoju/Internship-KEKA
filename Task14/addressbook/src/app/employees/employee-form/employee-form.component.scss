@@ -1,0 +1,15 @@
+.address{
+    word-wrap: break-word;
+    white-space: pre-line;
+}
+
+#employee-form-div{
+    position: absolute;
+    z-index: 1;
+    margin: 1rem 1rem 0 0 !important;
+    box-shadow: 0 0 10px black;
+}
+
+#close-form:hover{
+    cursor: pointer;
+}
