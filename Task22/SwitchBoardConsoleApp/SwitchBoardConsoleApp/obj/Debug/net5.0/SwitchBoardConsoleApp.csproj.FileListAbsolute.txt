@@ -1,0 +1,16 @@
+C:\Coding\Internship\Task22\SwitchBoardConsoleApp\SwitchBoardConsoleApp\bin\Debug\net5.0\SwitchBoardConsoleApp.exe
+C:\Coding\Internship\Task22\SwitchBoardConsoleApp\SwitchBoardConsoleApp\bin\Debug\net5.0\SwitchBoardConsoleApp.deps.json
+C:\Coding\Internship\Task22\SwitchBoardConsoleApp\SwitchBoardConsoleApp\bin\Debug\net5.0\SwitchBoardConsoleApp.runtimeconfig.json
+C:\Coding\Internship\Task22\SwitchBoardConsoleApp\SwitchBoardConsoleApp\bin\Debug\net5.0\SwitchBoardConsoleApp.runtimeconfig.dev.json
+C:\Coding\Internship\Task22\SwitchBoardConsoleApp\SwitchBoardConsoleApp\bin\Debug\net5.0\SwitchBoardConsoleApp.dll
+C:\Coding\Internship\Task22\SwitchBoardConsoleApp\SwitchBoardConsoleApp\bin\Debug\net5.0\ref\SwitchBoardConsoleApp.dll
+C:\Coding\Internship\Task22\SwitchBoardConsoleApp\SwitchBoardConsoleApp\bin\Debug\net5.0\SwitchBoardConsoleApp.pdb
+C:\Coding\Internship\Task22\SwitchBoardConsoleApp\SwitchBoardConsoleApp\obj\Debug\net5.0\SwitchBoardConsoleApp.csprojAssemblyReference.cache
+C:\Coding\Internship\Task22\SwitchBoardConsoleApp\SwitchBoardConsoleApp\obj\Debug\net5.0\SwitchBoardConsoleApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Coding\Internship\Task22\SwitchBoardConsoleApp\SwitchBoardConsoleApp\obj\Debug\net5.0\SwitchBoardConsoleApp.AssemblyInfoInputs.cache
+C:\Coding\Internship\Task22\SwitchBoardConsoleApp\SwitchBoardConsoleApp\obj\Debug\net5.0\SwitchBoardConsoleApp.AssemblyInfo.cs
+C:\Coding\Internship\Task22\SwitchBoardConsoleApp\SwitchBoardConsoleApp\obj\Debug\net5.0\SwitchBoardConsoleApp.csproj.CoreCompileInputs.cache
+C:\Coding\Internship\Task22\SwitchBoardConsoleApp\SwitchBoardConsoleApp\obj\Debug\net5.0\SwitchBoardConsoleApp.dll
+C:\Coding\Internship\Task22\SwitchBoardConsoleApp\SwitchBoardConsoleApp\obj\Debug\net5.0\ref\SwitchBoardConsoleApp.dll
+C:\Coding\Internship\Task22\SwitchBoardConsoleApp\SwitchBoardConsoleApp\obj\Debug\net5.0\SwitchBoardConsoleApp.pdb
+C:\Coding\Internship\Task22\SwitchBoardConsoleApp\SwitchBoardConsoleApp\obj\Debug\net5.0\SwitchBoardConsoleApp.genruntimeconfig.cache

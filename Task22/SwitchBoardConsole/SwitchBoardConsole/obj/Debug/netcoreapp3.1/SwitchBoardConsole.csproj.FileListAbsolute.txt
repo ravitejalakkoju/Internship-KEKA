@@ -1,0 +1,13 @@
+C:\Coding\Internship\Task22\SwitchBoardConsole\SwitchBoardConsole\bin\Debug\netcoreapp3.1\SwitchBoardConsole.exe
+C:\Coding\Internship\Task22\SwitchBoardConsole\SwitchBoardConsole\bin\Debug\netcoreapp3.1\SwitchBoardConsole.deps.json
+C:\Coding\Internship\Task22\SwitchBoardConsole\SwitchBoardConsole\bin\Debug\netcoreapp3.1\SwitchBoardConsole.runtimeconfig.json
+C:\Coding\Internship\Task22\SwitchBoardConsole\SwitchBoardConsole\bin\Debug\netcoreapp3.1\SwitchBoardConsole.runtimeconfig.dev.json
+C:\Coding\Internship\Task22\SwitchBoardConsole\SwitchBoardConsole\bin\Debug\netcoreapp3.1\SwitchBoardConsole.dll
+C:\Coding\Internship\Task22\SwitchBoardConsole\SwitchBoardConsole\bin\Debug\netcoreapp3.1\SwitchBoardConsole.pdb
+C:\Coding\Internship\Task22\SwitchBoardConsole\SwitchBoardConsole\obj\Debug\netcoreapp3.1\SwitchBoardConsole.csprojAssemblyReference.cache
+C:\Coding\Internship\Task22\SwitchBoardConsole\SwitchBoardConsole\obj\Debug\netcoreapp3.1\SwitchBoardConsole.AssemblyInfoInputs.cache
+C:\Coding\Internship\Task22\SwitchBoardConsole\SwitchBoardConsole\obj\Debug\netcoreapp3.1\SwitchBoardConsole.AssemblyInfo.cs
+C:\Coding\Internship\Task22\SwitchBoardConsole\SwitchBoardConsole\obj\Debug\netcoreapp3.1\SwitchBoardConsole.csproj.CoreCompileInputs.cache
+C:\Coding\Internship\Task22\SwitchBoardConsole\SwitchBoardConsole\obj\Debug\netcoreapp3.1\SwitchBoardConsole.dll
+C:\Coding\Internship\Task22\SwitchBoardConsole\SwitchBoardConsole\obj\Debug\netcoreapp3.1\SwitchBoardConsole.pdb
+C:\Coding\Internship\Task22\SwitchBoardConsole\SwitchBoardConsole\obj\Debug\netcoreapp3.1\SwitchBoardConsole.genruntimeconfig.cache
