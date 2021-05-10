@@ -2,14 +2,26 @@
 {
     class Appliance
     {
+        private readonly int _key;
         private readonly string _name;
         private readonly int _serialNumber;
-        private bool _active = true;
+        private bool _state = false;
 
         public Appliance(int key, int serialNumber)
         {
+            _key = key;
             _name = ApplianceDB.GetApplianceName(key);
             _serialNumber = serialNumber;
+        }
+
+        public void ChangeState()
+        {
+            _state = !_state;
+        }
+
+        public int Key
+        {
+            get => _key;
         }
 
         public string Name 
@@ -22,13 +34,18 @@
             get => _serialNumber;
         }
 
-        public bool Active
+        public bool State
         {
-            get => _active;
+            get => _state;
             set
             {
-                _active = value;
+                _state = value;
             }
+        }
+
+        public bool Active
+        {
+            get => _state;
         }
     }
 }

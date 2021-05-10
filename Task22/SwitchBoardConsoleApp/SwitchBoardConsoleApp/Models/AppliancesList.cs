@@ -10,9 +10,9 @@ namespace SwitchBoardConsoleApp.Models
 
         private readonly Dictionary<int, int> _applianceCount;
 
-        private readonly List<string> _supportedAppliances;
+        private readonly List<int> _supportedAppliances;
 
-        public AppliancesList(List<string> supportedAppliances)
+        public AppliancesList(List<int> supportedAppliances)
         {
             _supportedAppliances = supportedAppliances;
 
@@ -35,14 +35,14 @@ namespace SwitchBoardConsoleApp.Models
         {
             try
             {
-                if (_supportedAppliances.Contains(ApplianceDB.GetApplianceName(key)))
+                if (_supportedAppliances.Contains(key))
                 {
                     int serialNumber = ++_applianceCount[key];
                     _appliances.Add(GenerateApplianceId(), new Appliance(key, serialNumber));
                 } 
                 else
                 {
-                    throw new Exception("SwitchBoard does not support this Appliance");
+                    throw new Exception("This Room does not support this Appliance");
                 }
             }
             catch (Exception e)
@@ -78,9 +78,10 @@ namespace SwitchBoardConsoleApp.Models
             return (Appliance) _appliances.Select(a => a.Value).Where(p => p.SerialNumber == serialNum && p.Name == name);
         }
 
-        public List<int> GetAppliances(int key)
+        public List<Appliance> GetAppliances(string name)
         {
-            return (List<int>) _appliances.Select(a => a).Where(p => p.Value.Name == ApplianceDB.GetApplianceName(key)).Select(a => a.Key);
+            int key = ApplianceDB.GetApplianceKey(name);
+            return (List<Appliance>) _appliances.Select(a => a).Where(p => p.Value.Name == ApplianceDB.GetApplianceName(key)).Select(a => a.Value);
         }
 
         public IDictionary<int, Appliance> GetAllAppliances()
@@ -105,12 +106,12 @@ namespace SwitchBoardConsoleApp.Models
 
         public List<Appliance> GetActiveAppliances()
         {
-            return (List<Appliance>) _appliances.Select(a => a.Value).Where(p => p.Active);
+            return (List<Appliance>) _appliances.Select(a => a.Value).Where(p => p.State);
         }
 
         public List<Appliance> GetInActiveAppliances()
         {
-            return (List<Appliance>) _appliances.Select(a => a.Value).Where(p => !p.Active);
+            return (List<Appliance>) _appliances.Select(a => a.Value).Where(p => !p.State);
         }
     }
 }

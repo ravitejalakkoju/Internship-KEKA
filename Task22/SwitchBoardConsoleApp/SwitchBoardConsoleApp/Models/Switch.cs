@@ -3,11 +3,11 @@
     class Switch
     {
         private bool _state;
-        private int _connectedApplianceId;
+        private readonly Appliance _connectedAppliance;
 
-        public Switch(int connectedApplianceId)
+        public Switch(Appliance connectedAppliance)
         {
-            _connectedApplianceId = connectedApplianceId;
+            _connectedAppliance = connectedAppliance;
             _state = false;
         }
 
@@ -23,15 +23,12 @@
         public void ChangeState()
         {
             _state = !_state;
+            _connectedAppliance.ChangeState();
         }
 
-        public int ConnectedAppliance
+        public Appliance ConnectedAppliance
         {
-            get => _connectedApplianceId;
-            set
-            {
-                _connectedApplianceId = value;
-            }
+            get => _connectedAppliance;
         }
     }
 }

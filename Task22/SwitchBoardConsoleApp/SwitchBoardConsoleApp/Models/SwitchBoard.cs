@@ -7,12 +7,12 @@ namespace SwitchBoardConsoleApp.Models
     {
         private readonly IDictionary<int, Switch> _switches;
 
-        public AppliancesList AppliancesList;
+        private readonly AppliancesList _appliancesList;
 
-        public SwitchBoard(List<string> supportedAppliances)
+        public SwitchBoard(AppliancesList appliancesList)
         {
-            AppliancesList = new AppliancesList(supportedAppliances);
             _switches = new Dictionary<int, Switch>();
+            _appliancesList = appliancesList;
         }
 
         public IDictionary<int, Switch> Switches
@@ -25,26 +25,26 @@ namespace SwitchBoardConsoleApp.Models
             return _switches.Count + 1;
         }
 
-        public void AddSwitch(int applianceId)
+        public void AddSwitch(Appliance appliance)
         {
-            _switches.Add(generateSwitchId(), new Switch(applianceId));
+            _switches.Add(generateSwitchId(), new Switch(appliance));
         }
 
-        public void AddSwitch(int switchId, int applianceId)
+        public void AddSwitch(int switchId, Appliance appliance)
         {
             if (_switches.ContainsKey(switchId))
-                _switches[switchId] = new Switch(applianceId);
+                _switches[switchId] = new Switch(appliance);
         }
 
-        public void AddSwitches(List<int> applianceId)
+        public void AddSwitches(List<Appliance> appliances)
         {
-            foreach (var id in applianceId)
+            foreach (var appliance in appliances)
             {
-                AddSwitch(id);
+                AddSwitch(appliance);
             }
         }
 
-        public void AddSwitches(Dictionary<int, int> keyValuePairs)
+        public void AddSwitches(Dictionary<int, Appliance> keyValuePairs)
         {
             foreach (var key in keyValuePairs.Keys)
             {
@@ -66,7 +66,7 @@ namespace SwitchBoardConsoleApp.Models
         {
             foreach (int key in _switches.Keys)
             {
-                if (_switches[key].ConnectedAppliance == applianceId)
+                if (_switches[key].ConnectedAppliance.Equals(_appliancesList.GetAppliance(applianceId)))
                 {
                     return key;
                 }
@@ -81,12 +81,12 @@ namespace SwitchBoardConsoleApp.Models
 
         public Switch GetSwitchForAppliance(int id)
         {
-            return (Switch) _switches.Select(s => s.Value).Where(p => p.ConnectedAppliance == id);
+            return (Switch) _switches.Select(s => s.Value).Where(p => p.ConnectedAppliance.Equals(_appliancesList.GetAppliance(id)));
         }
 
-        public IDictionary<int, Switch> GetSwitchesForAppliance(int applianceKey)
+        public IDictionary<int, Switch> GetSwitchesForAppliance(string applianceName)
         {
-            return (Dictionary<int, Switch>) _switches.Select(s => s).Where(p => AppliancesList.GetAppliances(applianceKey).Contains(p.Value.ConnectedAppliance));
+            return (Dictionary<int, Switch>) _switches.Select(s => s).Where(p => _appliancesList.GetAppliances(applianceName).Contains(p.Value.ConnectedAppliance));
         }
 
         public bool GetSwitchState(int id)
@@ -96,7 +96,7 @@ namespace SwitchBoardConsoleApp.Models
 
         public bool GetSwitchStateForAppliance (int id)
         {
-            return _switches.Where(s => s.Value.ConnectedAppliance == id).Select(s => s.Value.State).First();
+            return _switches.Where(s => s.Value.ConnectedAppliance == _appliancesList.GetAppliance(id)).Select(s => s.Value.State).First();
         }
 
         public Dictionary<int, bool> GetSwitchStates()
@@ -106,7 +106,7 @@ namespace SwitchBoardConsoleApp.Models
 
         public Dictionary<int, bool> GetSwitchStates(int applianceKey)
         {
-            return _switches.Where(s => ApplianceDB.GetApplianceKey(AppliancesList.GetAppliance(s.Value.ConnectedAppliance).Name) == applianceKey)
+            return _switches.Where(s =>s.Value.ConnectedAppliance.Key == applianceKey)
                             .ToDictionary(s => s.Key, s => s.Value.State);
         }
 
