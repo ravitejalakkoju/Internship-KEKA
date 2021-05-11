@@ -20,14 +20,14 @@ namespace SwitchBoardConsoleApp.Models
             get => _switches;
         }
 
-        private int generateSwitchId()
+        private int GenerateSwitchId()
         {
             return _switches.Count + 1;
         }
 
         public void AddSwitch(Appliance appliance)
         {
-            _switches.Add(generateSwitchId(), new Switch(appliance));
+            _switches.Add(GenerateSwitchId(), new Switch(appliance));
         }
 
         public void AddSwitch(int switchId, Appliance appliance)

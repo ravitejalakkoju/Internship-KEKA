@@ -14,7 +14,7 @@ namespace SwitchBoardConsole.Views
                 Display.Show($"{@switch.Key}: {appliance.Name} {appliance.SerialNumber} is {(appliance.State ? "On": "Off")}");
             }
 
-            int choice = Read.Choice();
+            int choice = Read.Choice("Select Appliance: ");
 
             Switch selectedSwitch = switchBoard.Switches[choice];
 
@@ -25,9 +25,18 @@ namespace SwitchBoardConsole.Views
 
             choice = Read.Choice();
 
-            if(choice == 1) selectedSwitch.ChangeState();
-
-            Show(switchBoard);
+            switch (choice)
+            {
+                case 1:
+                    selectedSwitch.ChangeState(); 
+                    Show(switchBoard);
+                    break;
+                case 2:
+                    Show(switchBoard);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

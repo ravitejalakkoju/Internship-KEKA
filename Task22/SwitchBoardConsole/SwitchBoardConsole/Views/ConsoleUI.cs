@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using SwitchBoardConsole.DataBase;
 using SwitchBoardConsole.Models;
 
@@ -33,9 +32,11 @@ namespace SwitchBoardConsole.Views
 
             while(--count >= 0)
             {
-                Display.Menu(ApplianceDB.GetAppliances());
+                //Display.Menu(ApplianceDB.GetAppliances());
 
-                List<int> applianceIds = new(Read.IntegerList(ApplianceDB.GetKeys()).Select(a => a).Distinct());
+                //List<int> applianceIds = new(Read.IntegerList(ApplianceDB.GetKeys()).Select(a => a).Distinct());
+                
+                List<int> applianceIds = new() { 1, 2, 3 };
 
                 Room newRoom = new($"Room {count + 1}", applianceIds);
 
@@ -64,9 +65,11 @@ namespace SwitchBoardConsole.Views
             {
                 List<Switch> switches = new();
 
-                Display.Menu(room.AppliancesList.GetAllAppliances().ToDictionary(a => a.Key, a => a.Value.Name));
+                //Display.Menu(room.AppliancesList.GetAllAppliances().ToDictionary(a => a.Key, a => a.Value.Name));
 
-                List<int> applianceKeys = new(Read.IntegerList(room.AppliancesList.GetApplianceKeys()).Select(a => a).Distinct());
+                //List<int> applianceKeys = new(Read.IntegerList(room.AppliancesList.GetApplianceKeys()).Select(a => a).Distinct());
+                
+                List<int> applianceKeys = new(room.AppliancesList.GetApplianceKeys());
 
                 foreach(int key in applianceKeys)
                 {
