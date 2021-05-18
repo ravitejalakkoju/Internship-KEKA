@@ -1,0 +1,16 @@
+C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\obj\Debug\net5.0\ParkingLotConsole.csprojAssemblyReference.cache
+C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\obj\Debug\net5.0\ParkingLotConsole.GeneratedMSBuildEditorConfig.editorconfig
+C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\obj\Debug\net5.0\ParkingLotConsole.AssemblyInfoInputs.cache
+C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\obj\Debug\net5.0\ParkingLotConsole.AssemblyInfo.cs
+C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\obj\Debug\net5.0\ParkingLotConsole.csproj.CoreCompileInputs.cache
+C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\bin\Debug\net5.0\ParkingLotConsole.exe
+C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\bin\Debug\net5.0\ParkingLotConsole.deps.json
+C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\bin\Debug\net5.0\ParkingLotConsole.runtimeconfig.json
+C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\bin\Debug\net5.0\ParkingLotConsole.runtimeconfig.dev.json
+C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\bin\Debug\net5.0\ParkingLotConsole.dll
+C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\bin\Debug\net5.0\ref\ParkingLotConsole.dll
+C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\bin\Debug\net5.0\ParkingLotConsole.pdb
+C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\obj\Debug\net5.0\ParkingLotConsole.dll
+C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\obj\Debug\net5.0\ref\ParkingLotConsole.dll
+C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\obj\Debug\net5.0\ParkingLotConsole.pdb
+C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\obj\Debug\net5.0\ParkingLotConsole.genruntimeconfig.cache
