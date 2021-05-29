@@ -1,0 +1,35 @@
+﻿@page
+@model AddressBookV2.Pages.Employees.IndexModel
+
+@{
+    ViewData["Title"] = "Employees List";
+}
+
+<partial name="Navigator" />
+<div class="m-1 m-md-5">
+    <div class="row">
+        <div class="col-lg-6 ml-3 mt-3">
+            <h6>CONTACTS</h6>
+
+            <div class="overflow-y me-3">
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    @foreach (var item in Model.Employees)
+                    {
+                        <div class="pr-4 position-relative">
+                            <a class="nav-link text-left text-black rounded-0 p-2 pt-1 border border-secondary details" asp-page="./Details" asp-route-id="@item.ID">
+                                <span class="fs-5 d-block text-black">@Html.DisplayFor(modelItem => item.Name)</span>
+                                <span class="m-1 small d-block">
+                                    <span class="small d-block text-black"> @Html.DisplayFor(modelItem => item.Email) </span>
+                                    <span class="small d-block text-black">+91 @Html.DisplayFor(modelItem => item.MobileNumber) </span>
+                                </span>
+                            </a>
+                            <a asp-page="./Edit" asp-route-id="@item.ID" class="position-absolute text-primary" style="right: 0.1rem; top: 1rem;"><i class="fas fa-edit"></i></a>
+                            <a asp-page="./Delete" asp-route-id="@item.ID" class="position-absolute text-danger" style="right: 0.3rem; bottom: 1rem;"><i class="fas fa-trash-alt"></i></a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

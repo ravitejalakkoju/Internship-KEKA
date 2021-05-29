@@ -1,0 +1,160 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+footer {
+  display: none;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+/* New Code */
+
+html, body, ul {
+    margin: 0 !important;
+    margin-bottom: 5rem !important;
+    padding: 0 !important;
+    font-size: 17.5px;
+}
+
+.lh-0{
+    line-height: 0px;
+}
+
+.fs-5{
+    font-size: 1.1rem;
+}
+
+.open-sans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.century-gothic {
+  font-family: 'Century Gothic';
+  src: url("./fonts/Century Gothic.eot");
+  src: url("./fonts/Century Gothic.eot?#iefix") format("embedded-opentype"), url("./fonts/Century Gothic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2.5rem;
+}
+
+.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+header.bg-header {
+  background-color: #1695c7;
+}
+
+.navigation a, .navigation button {
+  color: white !important;
+  padding: 0.6rem 1rem !important;
+  font-weight: 500;
+  text-decoration: none;
+  background-color: transparent;
+  margin-right: 0.25rem !important;
+  border: 0;
+}
+
+.navbar-nav{
+    font-size: 0.9rem;
+}
+
+.navbar-nav a, .navbar-nav button{
+    letter-spacing: 1px;
+}
+
+.navigation a:hover, .navigation button:hover {
+  background-color: #df6400 !important;
+  border-left: 5px solid white;
+  color: black;
+}
+
+.navigation .active {
+  background-color: #df6400 !important;
+  color: black;
+}
+
+.home ul {
+  line-height: 1.5rem;
+}
+
+.active.nav-link {
+  background-color: rgba(68, 186, 255, 0.301) !important;
+  color: black !important;
+}
+
+.text-contact {
+  letter-spacing: 1px;
+}
+
+a.nav-link {
+  text-align: left !important;
+  color: black;
+}
+
+a{
+    color: black;
+}
+
+.address {
+  word-wrap: break-word;
+  white-space: pre-line;
+}
+
+.tab-pane {
+  margin-top: -1.5rem !important;
+}
+
+#employee-form-div {
+  position: absolute;
+  z-index: 1;
+  margin-top: -2rem;
+  margin-bottom: 2rem;
+  -webkit-box-shadow: 0 0 10px black;
+          box-shadow: 0 0 10px black;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+.edit:hover {
+  color: #0099ff !important;
+}
+
+.delete:hover {
+  color: red !important;
+}
+
+#close-form:hover {
+  cursor: pointer;
+}
+
+.overflow-y {
+  max-height: 65vh;
+  overflow-y: scroll;
+}
+
+.overflow-y::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.overflow-y::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 2px rgba(39, 39, 39, 0.3);
+          box-shadow: inset 0 0 2px rgba(39, 39, 39, 0.3);
+}
+
+.overflow-y::-webkit-scrollbar-thumb {
+  background-color: #bebebe;
+}

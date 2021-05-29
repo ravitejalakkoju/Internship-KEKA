@@ -1,0 +1,33 @@
+﻿@page
+@model AddressBook.Pages.Employees.IndexModel
+
+@{
+    ViewData["Title"] = "Employees List";
+}
+
+<partial name="Navigator" />
+
+<a asp-page="Create">Create New</a>
+
+<h6 class="ml-3 mt-3">CONTACTS</h6>
+
+<div class="overflow-y col-lg-4 me-3">
+    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+        @foreach (var item in Model.Employees)
+        {
+            <a class="nav-link text-left rounded-0 p-2 pt-1 border border-secondary" asp-page="./Details" asp-route-id="@item.ID">
+                <span class="fs-5 d-block">@Html.DisplayFor(modelItem => item.name)</span>
+                <span class="m-1 small d-block">
+                    <span class="small d-block"> @Html.DisplayFor(modelItem => item.email) </span>
+                    <span class="small d-block">+91 @Html.DisplayFor(modelItem => item.mobile) </span>
+                </span>
+            </a>
+            <!-- <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a>
+            <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a> -->
+        }
+    </div>
+</div>
+<div class="col-lg-8">
+
+</div>
+

@@ -1,0 +1,60 @@
+﻿@page
+@model AddressBookV2.Pages.Employees.CreateModel
+
+<div class="m-1 m-md-5 col-10">
+    <h5>Create Employee</h5>
+
+    <div id="employee-form-div" class="mt-5 mb-5 p-4 bg-white col-12">
+        <a id="close-form"asp-page="Index"><i class="fa fa-close position-absolute" style="right: 1rem; top: 1rem;"></i></a>
+        <form method="post" id="employee-form" class="col-md-12">
+            <div asp-validation-summary="ModelOnly" class="text-danger invalid small"></div>
+            <div class="form-group">
+                <label asp-for="Employee.Name" class="form-label m-0 small fw-bold"></label>
+                <input asp-for="Employee.Name" class="form-control rounded-0 border-dark" id="name" required />
+                <span asp-validation-for="Employee.Name" class="text-danger invalid small required" id="nameRequired">Name is required *</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.Email" class="form-label m-0 small fw-bold"></label>
+                <input asp-for="Employee.Email" class="form-control rounded-0 border-dark" id="email" required />
+                <span asp-validation-for="Employee.Email" class="text-danger invalid small help" id="emailHelp">Enter in correct pattern [eg., xyz.123_abc@hyd.co.in] !</span>
+                <span asp-validation-for="Employee.Email" class="text-danger invalid small duplicate" id="emailDuplicate">E-Mail already exists.</span>
+                <span asp-validation-for="Employee.Email" class="text-danger invalid small required" id="emailRequired">Email is required *</span>
+            </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Employee.MobileNumber" class="form-label m-0 small fw-bold"></label>
+                    <input asp-for="Employee.MobileNumber" class="form-control rounded-0 border-dark" id="mobile" required />
+                    <span asp-validation-for="Employee.MobileNumber" class="text-danger invalid small help" id="mobileHelp">Please provide a valid Number.</span>
+                    <span asp-validation-for="Employee.MobileNumber" class="text-danger invalid small duplicate" id="mobileDuplicate">Mobile Number already exists.</span>
+                    <span asp-validation-for="Employee.MobileNumber" class="text-danger invalid small required" id="mobileRequired">Mobile No. is required *</span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Employee.Landline" class="form-label m-0 small fw-bold"></label>
+                    <input asp-for="Employee.Landline" class="form-control rounded-0 border-dark" id="landline"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.Website" class="form-label m-0 small fw-bold"></label>
+                <input asp-for="Employee.Website" class="form-control rounded-0 border-dark" id="website"/>
+                <span asp-validation-for="Employee.Website" class="text-danger invalid small help" id="websiteHelp">Wrong Pattern !</span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Employee.Address" class="form-label m-0 small fw-bold"></label>
+                <textarea asp-for="Employee.Address" class="form-control rounded-0 border-dark" id="address" required></textarea>
+                <span asp-validation-for="Employee.Address" class="text-danger invalid small required" id="addressRequired">Address is required *</span>
+            </div>
+            <div class="form-group col-12 d-flex justify-content-end">
+                <a asp-page="Index" class="btn mr-2 btn-success rounded-0 p-1 col-md-3" id="close-button">Close</a>
+                <input type="submit" value="Add" class="btn btn-success rounded-0 p-1 col-md-3" id="submit-button" />
+            </div>
+        </form>
+    </div>
+
+    <div>
+        <a asp-page="Index">Back to List</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

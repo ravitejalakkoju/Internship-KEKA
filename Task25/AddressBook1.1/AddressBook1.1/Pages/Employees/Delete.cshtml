@@ -1,0 +1,60 @@
+﻿@page
+@model AddressBookV2.Pages.Employees.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="m-1 m-md-5">
+    <h1>Delete Employee</h1>
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Employee</h4>
+        <hr />
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Employee.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Employee.Name)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Employee.Email)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Employee.Email)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Employee.MobileNumber)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Employee.MobileNumber)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Employee.Landline)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Employee.Landline)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Employee.Website)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Employee.Website)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Employee.Address)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Employee.Address)
+            </dd>
+        </dl>
+
+        <form method="post">
+            <input type="hidden" asp-for="Employee.ID" />
+            <input type="submit" value="Delete" class="btn btn-danger" /> |
+            <a asp-page="./Index">Back to List</a>
+        </form>
+    </div>
+</div>
