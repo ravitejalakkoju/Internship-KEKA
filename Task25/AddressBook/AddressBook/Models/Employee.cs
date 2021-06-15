@@ -9,16 +9,16 @@ namespace AddressBook.Models
     {
         public int ID { get; set; }
 
-        public string name { get; set; }
+        public string Name { get; set; }
 
-        public string email { get; set; }
+        public string Email { get; set; }
 
-        public string mobile { get; set; }
+        public string MobileNumber { get; set; }
 
-        public string landline { get; set; }
+        public string Landline { get; set; }
 
-        public string website { get; set; }
+        public string Website { get; set; }
 
-        public string address { get; set; }
+        public string Address { get; set; }
     }
 }

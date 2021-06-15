@@ -1,6 +1,4 @@
 using Microsoft.AspNetCore.Hosting;
-using AddressBook.Data;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -8,6 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AddressBook.Data;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AddressBook
 {
@@ -30,8 +30,10 @@ namespace AddressBook
                 try
                 {
                     var context = services.GetRequiredService<AddressBookContext>();
+
                     context.Database.EnsureCreated();
-                    // DbInitializer.Initialize(context);
+
+                    EmployeesInitializer.Initialize(context);
                 }
                 catch (Exception ex)
                 {
