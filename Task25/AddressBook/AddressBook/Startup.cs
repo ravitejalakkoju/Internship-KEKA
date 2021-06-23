@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AddressBook.Data;
 using Microsoft.EntityFrameworkCore;
+using AddressBook.Services;
 
 namespace AddressBook
 {
@@ -25,12 +26,14 @@ namespace AddressBook
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
-
             services.AddDbContext<AddressBookContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
+            services.AddMvc();
+
             services.AddDatabaseDeveloperPageExceptionFilter();
+
+            services.AddScoped<IEmployeeService, EmployeeService>();
 
             services.AddControllersWithViews();
         }

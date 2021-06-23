@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "q0o0bvrunk678HuETlEkh1byCdUpVQTAgA6NbLmbHxpPss+mC7q5lwjLTQMaefh7hu9IjQX8E6vITP5NXbUmKw==",
+  "success": true,
+  "projectFilePath": "C:\\Coding\\Internship\\Task25\\Tests\\IOSContainerDemo\\IOSContainerDemo\\IOSContainerDemo.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ravit\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\ravit\\.nuget\\packages\\unity\\5.11.10\\unity.5.11.10.nupkg.sha512"
+  ],
+  "logs": []
+}

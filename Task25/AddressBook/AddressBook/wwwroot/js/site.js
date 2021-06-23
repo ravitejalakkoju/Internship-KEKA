@@ -7,13 +7,14 @@
 
 let validation = (type, value) => {
     switch (type) {
-        case 'email':
+        case "email":
             return validateEmail(value);
             break;
-        case 'webpage':
+        case "website":
+            console.log(value, "--", validateWebpage(value));
             return validateWebpage(value);
             break;
-        case 'mobile':
+        case "mobile":
             return validateMobileNumber(value);
             break;
         default:
@@ -37,16 +38,19 @@ let validateMobileNumber = (mobile) => {
 let feedbackHandler = () => {
     $('#name').on('input change', () => {
         $('#nameRequired').hide()
+        if ($('#name').val() == '') $('#nameRequired').show()
     });
     $('#email').on('input change', () => {
         $('#emailRequired').hide()
         let email = $('#email').val();
         validateEmail(email) ? $('#emailHelp').hide() : $('#emailHelp').show();
+        if ($('#email').val() == '') $('#emailRequired').show()
     });
     $('#mobile').on('input change', () => {
         $('#mobileRequired').hide()
         let mobileNum = $('#mobile').val();
-        validateMobileNum(mobileNum.toString()) ? $('#mobileHelp').hide() : $('#mobileHelp').show();
+        validateMobileNumber(mobileNum.toString()) ? $('#mobileHelp').hide() : $('#mobileHelp').show();
+        if ($('#mobile').val() == '') $('#mobileRequired').show()
     });
     $('#website').on('input change', () => {
         let website = $('#website').val();
@@ -54,6 +58,7 @@ let feedbackHandler = () => {
     });
     $('#address').on('input change', () => {
         $('#addressRequired').hide()
+        if ($('#address').val() == '') $('#addressRequired').show()
     });
 };
 
@@ -69,10 +74,9 @@ let formSubmission = () => {
                 check = false;
             } else {
                 if (!validation($(this).attr('id'), this.value) && this.value != '') {
+                    console.log(this.value);
                     $('#' + $(this).attr('id') + 'Help').show();
-                    console.log(check + $(this).attr('id'));
                     check = false;
-                    console.log(check + $(this).attr('id'));
                 }
             }
         })
@@ -89,9 +93,9 @@ let hideInvalidFeedbacks = () => {
 };
 
 $(document).ready(() => {
-    feedbackHandler();
-
     hideInvalidFeedbacks();
+
+    feedbackHandler();
 
     formSubmission();
 });

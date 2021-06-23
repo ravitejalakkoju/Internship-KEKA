@@ -39,7 +39,6 @@ C:\Coding\Internship\Task25\AddressBook\AddressBook\obj\Debug\net5.0\AddressBook
 C:\Coding\Internship\Task25\AddressBook\AddressBook\obj\Debug\net5.0\AddressBook.genruntimeconfig.cache
 C:\Coding\Internship\Task25\AddressBook\AddressBook\obj\Debug\net5.0\AddressBook.csproj.CopyComplete
 C:\Coding\Internship\Task25\AddressBook\AddressBook\obj\Debug\net5.0\Razor\Views\Shared\Components\EmployeesList\EmployeesList.cshtml.g.cs
-C:\Coding\Internship\Task25\AddressBook\AddressBook\obj\Debug\net5.0\Razor\Views\Shared\Components\EmployeeDetails\EmployeeDetails.cshtml.g.cs
 C:\Coding\Internship\Task25\AddressBook\AddressBook\obj\Debug\net5.0\Razor\Views\Shared\Components\EmployeeForm\EmployeeForm.cshtml.g.cs
 C:\Coding\Internship\Task25\AddressBook\AddressBook\obj\Debug\net5.0\Razor\Views\Home\Create.cshtml.g.cs
 C:\Coding\Internship\Task25\AddressBook\AddressBook\obj\Debug\net5.0\Razor\Views\Home\Edit.cshtml.g.cs

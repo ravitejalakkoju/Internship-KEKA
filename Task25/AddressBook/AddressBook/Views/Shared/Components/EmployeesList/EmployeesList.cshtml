@@ -11,7 +11,7 @@
                     <a class="nav-link text-left text-black rounded-0 p-2 pt-1 border border-secondary details" asp-action="Details" asp-route-id="@employee.ID">
                         <span class="fs-5 d-block text-black">@Html.DisplayFor(modelItem => employee.Name)</span>
                         <span class="m-1 small d-block">
-                            <span class="small d-block text-black"> @Html.DisplayFor(modelItem => employee.Email) </span>
+                            <span class="small d-block text-black">@employee.Email </span>
                             <span class="small d-block text-black">+91 @Html.DisplayFor(modelItem => employee.MobileNumber) </span>
                         </span>
                     </a>

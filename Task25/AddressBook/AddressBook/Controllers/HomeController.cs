@@ -8,17 +8,18 @@ using System.Linq;
 using System.Threading.Tasks;
 using AddressBook.Data;
 using Microsoft.EntityFrameworkCore;
+using AddressBook.Services;
 
 namespace AddressBook.Controllers
 {
     public class HomeController : Controller
     {
-        private AddressBookContext _context;
+        private readonly IEmployeeService _employeeService;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger, AddressBookContext context)
+        public HomeController(ILogger<HomeController> logger, IEmployeeService employeeService)
         {
-            _context = context;
+            _employeeService = employeeService;
             _logger = logger;
         }
 
@@ -39,8 +40,10 @@ namespace AddressBook.Controllers
                 return NotFound();
             }
 
-            var employee = await _context.Employees
-                .FirstOrDefaultAsync(m => m.ID == id);
+            //var employee = await _context.Employees
+            //  .FirstOrDefaultAsync(m => m.ID == id);
+            var employee = await _employeeService.GetEmployee(id);
+
             if (employee == null)
             {
                 return NotFound();
@@ -60,12 +63,14 @@ namespace AddressBook.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Name,Email,MobileNumber,Landline,Website,Address")] Employee employee)
+        public async Task<IActionResult> Create([Bind("Name,Email,MobileNumber,Landline,Website,Address")] Employee employee)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(employee);
-                await _context.SaveChangesAsync();
+                //_context.Add(employee);
+                //await _context.SaveChangesAsync();
+                await _employeeService.AddEmployee(employee);
+
                 return RedirectToAction(nameof(Index));
             }
             return View(employee);
@@ -79,7 +84,9 @@ namespace AddressBook.Controllers
                 return NotFound();
             }
 
-            var employee = await _context.Employees.FindAsync(id);
+            //var employee = await _context.Employees.FindAsync(id);
+            var employee = await _employeeService.GetEmployee(id);
+
             if (employee == null)
             {
                 return NotFound();
@@ -103,12 +110,13 @@ namespace AddressBook.Controllers
             {
                 try
                 {
-                    _context.Update(employee);
-                    await _context.SaveChangesAsync();
+                    //_context.Update(employee);
+                    //await _context.SaveChangesAsync();
+                    await _employeeService.SetEmployee(employee);
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!EmployeeExists(employee.ID))
+                    if (!_employeeService.EmployeeExists(employee.ID))
                     {
                         return NotFound();
                     }
@@ -130,8 +138,10 @@ namespace AddressBook.Controllers
                 return NotFound();
             }
 
-            var employee = await _context.Employees
-                .FirstOrDefaultAsync(m => m.ID == id);
+            //var employee = await _context.Employees
+            //    .FirstOrDefaultAsync(m => m.ID == id);
+            var employee = await _employeeService.GetEmployee(id);
+
             if (employee == null)
             {
                 return NotFound();
@@ -145,15 +155,11 @@ namespace AddressBook.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var employee = await _context.Employees.FindAsync(id);
-            _context.Employees.Remove(employee);
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
-        }
+            var employee = await _employeeService.GetEmployee(id);
 
-        private bool EmployeeExists(int id)
-        {
-            return _context.Employees.Any(e => e.ID == id);
+            await _employeeService.DeleteEmployee(employee);
+
+            return RedirectToAction(nameof(Index));
         }
 
         [Route("Error")]
