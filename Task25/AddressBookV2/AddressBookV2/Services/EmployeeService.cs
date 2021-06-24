@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AddressBookV2.Data;
@@ -18,28 +17,22 @@ namespace AddressBookV2.Services
 
         public List<Employee> GetEmployees()
         {
-            var employees = _context.Employees.ToList();
-
-            return employees;
+            return _context.Employees.ToList();
         }
 
         public async Task<Employee> GetEmployee(int id)
         {
-            var employee = await _context.Employees.FindAsync(id);
-
-            return employee;
+            return await _context.Employees.FindAsync(id);
         }
 
         public async Task AddEmployee(Employee employee)
         {
-            employee.ID = _context.Employees.Count() + 1; //
-
             _context.Add(employee);
 
             await _context.SaveChangesAsync();
         }
 
-        public async Task SetEmployee(Employee employee) //
+        public async Task UpdateEmployee(Employee employee) 
         {
             _context.Update(employee);
 
@@ -58,14 +51,14 @@ namespace AddressBookV2.Services
             return _context.Employees.Any(e => e.ID == id);
         }
 
-        public bool IsEmailExists(string email)
+        public bool IsEmailExists(string email, int? id)
         {
-            return _context.Employees.Any(e => e.Email == email);
+            return _context.Employees.Any(e => e.Email == email && e.ID != id);
         }
 
-        public bool IsMobileNumberExists(string mobileNumber)
+        public bool IsMobileNumberExists(string mobileNumber, int? id)
         {
-            return _context.Employees.Any(e => e.MobileNumber == mobileNumber); ;
+            return _context.Employees.Any(e => e.MobileNumber == mobileNumber && e.ID != id); ;
         }
     }
 }

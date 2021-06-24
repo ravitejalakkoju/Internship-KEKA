@@ -1,13 +1,10 @@
 ﻿using AddressBookV2.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using AddressBookV2.Services;
-using Microsoft.Data.SqlClient;
+using AddressBookV2.ViewModels;
 
 namespace AddressBookV2.Controllers
 {
@@ -31,10 +28,17 @@ namespace AddressBookV2.Controllers
         }
 
         [HttpGet]
-        public JsonResult CheckExistingEmail(string Email)
+        public ActionResult CheckExistingEmail(string Email, int? ID)
         {
-            var isEmailExists = _employeeService.IsEmailExists(Email);
+            var isEmailExists = !_employeeService.IsEmailExists(Email, ID);
             return Json(isEmailExists);
+        }
+
+        [HttpGet]
+        public ActionResult CheckExistingMobileNumber(string MobileNumber, int? ID)
+        {
+            var isMobileNumberExists = !_employeeService.IsMobileNumberExists(MobileNumber, ID);
+            return Json(isMobileNumberExists);
         }
 
         [HttpPost]
@@ -47,7 +51,8 @@ namespace AddressBookV2.Controllers
 
                 return RedirectToAction(nameof(Index));
             }
-            return View(employee);
+
+            return View(EmployeeViewModelConverter(employee));
         }
 
         public async Task<IActionResult> Details(int id)
@@ -71,14 +76,14 @@ namespace AddressBookV2.Controllers
                 return NotFound();
             }
 
-            return View(employee);
+            return View(EmployeeViewModelConverter(employee));
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Email,MobileNumber,Landline,Website,Address")] Employee employee)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,Email,MobileNumber,Landline,Website,Address")] EmployeeViewModel employeeViewModel)
         {
-            if (id != employee.ID)
+            if (id != employeeViewModel.ID)
             {
                 return NotFound();
             }
@@ -87,11 +92,13 @@ namespace AddressBookV2.Controllers
             {
                 try
                 {
-                    await _employeeService.SetEmployee(employee);
+                    var employee = await _employeeService.GetEmployee(id);
+
+                    await _employeeService.UpdateEmployee(EmployeeCopy(employee, employeeViewModel));
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!_employeeService.EmployeeExists(employee.ID))
+                    if (!_employeeService.EmployeeExists(employeeViewModel.ID))
                     {
                         return NotFound();
                     }
@@ -102,7 +109,7 @@ namespace AddressBookV2.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(employee);
+            return View(employeeViewModel);
         }
 
         public async Task<IActionResult> Delete(int id)
@@ -114,7 +121,7 @@ namespace AddressBookV2.Controllers
                 return NotFound();
             }
 
-            return View(employee);
+            return View(EmployeeViewModelConverter(employee));
         }
 
         [HttpPost, ActionName("Delete")]
@@ -128,7 +135,47 @@ namespace AddressBookV2.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        
+        [NonAction]
+        public Employee EmployeeConverter(EmployeeViewModel employeeViewModel)
+        {
+            return new Employee
+            {
+                Name = employeeViewModel.Name,
+                Email = employeeViewModel.Email,
+                MobileNumber = employeeViewModel.MobileNumber,
+                Landline = employeeViewModel.Landline,
+                Website = employeeViewModel.Website,
+                Address = employeeViewModel.Address
+            };
+        }
+
+        [NonAction]
+        public EmployeeViewModel EmployeeViewModelConverter(Employee employee)
+        {
+            return new EmployeeViewModel
+            {
+                ID = employee.ID,
+                Name = employee.Name,
+                Email = employee.Email,
+                MobileNumber = employee.MobileNumber,
+                Landline = employee.Landline,
+                Website = employee.Website,
+                Address = employee.Address
+            };
+        }
+
+        [NonAction]
+        public Employee EmployeeCopy(Employee employee, EmployeeViewModel employeeViewModel)
+        {
+            employee.Name = employeeViewModel.Name;
+            employee.Email = employeeViewModel.Email;
+            employee.MobileNumber = employeeViewModel.MobileNumber;
+            employee.Landline = employeeViewModel.Landline;
+            employee.Website = employeeViewModel.Website;
+            employee.Address = employeeViewModel.Address;     
+
+            return employee;
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using AddressBookV2.Models;
 using AddressBookV2.Services;
 
 namespace AddressBookV2.ViewComponents
@@ -20,6 +17,7 @@ namespace AddressBookV2.ViewComponents
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var model = _employeeService.GetEmployees().ToList().OrderBy(e => e.Name);
+            ViewBag.Id = ViewContext.RouteData.Values["id"];
             return await Task.FromResult((IViewComponentResult)View(model));
         }
     }

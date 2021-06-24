@@ -1,0 +1,40 @@
+﻿@model AddressBookV2.Models.ViewModels.EmployeeViewModel
+
+<div asp-validation-summary="ModelOnly" class="text-danger invalid small"></div>
+<div class="form-group">
+    <label asp-for="@Model.Name" class="form-label m-0 small fw-bold"></label>
+    <input asp-for="@Model.Name" class="form-control rounded-0 border-dark" id="name" required />
+    <span asp-validation-for="@Model.Name" class="text-danger invalid small required" id="nameRequired">Name is required *</span>
+</div>
+<div class="form-group">
+    <label asp-for="@Model.Email" class="form-label m-0 small fw-bold"></label>
+    <!-- <input asp-for="Model.Email" class="form-control rounded-0 border-dark" id="email" name="email" required /> -->
+    @Html.EditorFor(m => m.Email)
+    <span asp-validation-for="@Model.Email" class="text-danger invalid small help" id="emailHelp">Enter in correct pattern [eg., xyz.123_abc@hyd.co.in] !</span>
+    <span asp-validation-for="@Model.Email" class="text-danger invalid small duplicate" id="emailDuplicate">E-Mail already exists.</span>
+    <span asp-validation-for="@Model.Email" class="text-danger invalid small required" id="emailRequired">Email is required *</span>
+    @Html.ValidationMessageFor(m => m.Email)
+</div>
+<div class="row">
+    <div class="form-group col-md-6">
+        <label asp-for="@Model.MobileNumber" class="form-label m-0 small fw-bold"></label>
+        <input asp-for="@Model.MobileNumber" class="form-control rounded-0 border-dark" id="mobile" required />
+        <span asp-validation-for="@Model.MobileNumber" class="text-danger invalid small help" id="mobileHelp">Please provide a valid Number.</span>
+        <span asp-validation-for="@Model.MobileNumber" class="text-danger invalid small duplicate" id="mobileDuplicate">Mobile Number already exists.</span>
+        <span asp-validation-for="@Model.MobileNumber" class="text-danger invalid small required" id="mobileRequired">Mobile No. is required *</span>
+    </div>
+    <div class="form-group col-md-6">
+        <label asp-for="@Model.Landline" class="form-label m-0 small fw-bold"></label>
+        <input asp-for="@Model.Landline" class="form-control rounded-0 border-dark" id="landline" />
+    </div>
+</div>
+<div class="form-group">
+    <label asp-for="@Model.Website" class="form-label m-0 small fw-bold"></label>
+    <input asp-for="@Model.Website" class="form-control rounded-0 border-dark" id="website" />
+    <span asp-validation-for="@Model.Website" class="text-danger invalid small help" id="websiteHelp">Wrong Pattern !</span>
+</div>
+<div class="form-group">
+    <label asp-for="@Model.Address" class="form-label m-0 small fw-bold"></label>
+    <textarea asp-for="@Model.Address" class="form-control rounded-0 border-dark" id="address" required></textarea>
+    <span asp-validation-for="@Model.Address" class="text-danger invalid small required" id="addressRequired">Address is required *</span>
+</div>

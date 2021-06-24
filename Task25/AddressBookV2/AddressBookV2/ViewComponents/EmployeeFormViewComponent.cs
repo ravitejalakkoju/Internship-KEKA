@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using AddressBookV2.Models;
+using AddressBookV2.ViewModels;
 
 namespace AddressBookV2.ViewComponents
 {
     public class EmployeeForm: ViewComponent
     {
-        public async Task<IViewComponentResult> InvokeAsync(Employee employee)
+        public async Task<IViewComponentResult> InvokeAsync(EmployeeViewModel employee)
         {
             var model = employee;
 

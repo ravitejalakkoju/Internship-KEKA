@@ -9,7 +9,6 @@ C:\Coding\Internship\Task25\AddressBook\AddressBook\bin\Debug\net5.0\ref\Address
 C:\Coding\Internship\Task25\AddressBook\AddressBook\bin\Debug\net5.0\AddressBook.pdb
 C:\Coding\Internship\Task25\AddressBook\AddressBook\bin\Debug\net5.0\AddressBook.Views.dll
 C:\Coding\Internship\Task25\AddressBook\AddressBook\bin\Debug\net5.0\AddressBook.Views.pdb
-C:\Coding\Internship\Task25\AddressBook\AddressBook\obj\Debug\net5.0\AddressBook.csprojAssemblyReference.cache
 C:\Coding\Internship\Task25\AddressBook\AddressBook\obj\Debug\net5.0\AddressBook.GeneratedMSBuildEditorConfig.editorconfig
 C:\Coding\Internship\Task25\AddressBook\AddressBook\obj\Debug\net5.0\AddressBook.AssemblyInfoInputs.cache
 C:\Coding\Internship\Task25\AddressBook\AddressBook\obj\Debug\net5.0\AddressBook.AssemblyInfo.cs
@@ -160,3 +159,4 @@ C:\Coding\Internship\Task25\AddressBook\AddressBook\bin\Debug\net5.0\zh-Hant\Mic
 C:\Coding\Internship\Task25\AddressBook\AddressBook\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Coding\Internship\Task25\AddressBook\AddressBook\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Coding\Internship\Task25\AddressBook\AddressBook\obj\Debug\net5.0\Razor\Views\Home\Delete.cshtml.g.cs
+C:\Coding\Internship\Task25\AddressBook\AddressBook\obj\Debug\net5.0\AddressBook.csproj.AssemblyReference.cache

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using AddressBookV2.Models;
+﻿using AddressBookV2.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace AddressBookV2.Data
