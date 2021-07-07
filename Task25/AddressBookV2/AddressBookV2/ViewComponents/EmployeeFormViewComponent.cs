@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using AddressBookV2.ViewModels;
+using AddressBookV2.Models.ViewModels;
 
 namespace AddressBookV2.ViewComponents
 {
@@ -13,7 +10,7 @@ namespace AddressBookV2.ViewComponents
         {
             var model = employee;
 
-            return await Task.FromResult((IViewComponentResult)View(model));
+            return await Task.FromResult((IViewComponentResult) View(model));
         }
     }
 }

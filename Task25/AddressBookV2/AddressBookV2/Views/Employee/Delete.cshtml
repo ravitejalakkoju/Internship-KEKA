@@ -5,6 +5,6 @@
     <form asp-controller="Employee" asp-action="Delete">
         <input type="hidden" asp-for="ID" />
         <input type="submit" value="Confirm Delete" class="btn btn-sm btn-outline-danger" /> |
-        <a asp-action="Index" class="small">Back to List</a>
+        <a asp-action="Details" asp-route-id="@Model.ID" class="small">Cancel</a>
     </form>
 </div>

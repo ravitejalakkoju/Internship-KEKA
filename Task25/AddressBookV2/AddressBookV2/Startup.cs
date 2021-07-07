@@ -8,9 +8,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AddressBookV2.Data;
+using AddressBookV2.Services.DBModels;
 using Microsoft.EntityFrameworkCore;
 using AddressBookV2.Services;
+using AddressBookV2.Services.AutoMapperProfiles;
 using System.Web;
 
 namespace AddressBookV2
@@ -34,6 +35,9 @@ namespace AddressBookV2
 
             services.AddScoped<IEmployeeService, EmployeeService>();
 
+            services.AddAutoMapper(typeof(EmployeeProfile));
+            services.AddAutoMapper(typeof(DBEmployeeProfile));
+
             services.AddControllersWithViews();
 
             services.AddMvc();
@@ -45,6 +49,11 @@ namespace AddressBookV2
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            else if (env.IsStaging())
+            {
+                app.UseDeveloperExceptionPage();
+//                app.UseExceptionHandler("/Home/Error");
             }
             else
             {

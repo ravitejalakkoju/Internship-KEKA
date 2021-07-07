@@ -24,7 +24,7 @@ using AddressBookV2.Models;
 #line default
 #line hidden
 #line 3 "C:\Coding\Internship\Task25\AddressBookV2\AddressBookV2\Views\_ViewImports.cshtml"
-using AddressBookV2.ViewModels;
+using AddressBookV2.Models.ViewModels;
 
 #line default
 #line hidden
@@ -34,7 +34,7 @@ using AddressBookV2.ViewComponents;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"5cc4b8ada3619f4bfdc68671e4797ea4cf3a4f52", @"/Views/Employee/Create.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b106bab61bf6dae18dfab4f37ab9f06b9034ead7", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cad773c11d3c55cac85ead5b01ca72527cf764d2", @"/Views/_ViewImports.cshtml")]
     public class Views_Employee_Create : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<EmployeeViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("id", new global::Microsoft.AspNetCore.Html.HtmlString("close-form"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -73,7 +73,7 @@ using AddressBookV2.ViewComponents;
             WriteLiteral("\r\n<div class=\"m-1\">\r\n    <div id=\"employee-form-div\" class=\"mt-3 mb-5 p-4 bg-white col-12\">\r\n        ");
             EndContext();
             BeginContext(165, 145, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cc4b8ada3619f4bfdc68671e4797ea4cf3a4f526619", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cc4b8ada3619f4bfdc68671e4797ea4cf3a4f526626", async() => {
                 BeginContext(229, 77, true);
                 WriteLiteral("<i class=\"fa fa-close position-absolute\" style=\"right: 1rem; top: 1rem;\"></i>");
                 EndContext();
@@ -98,7 +98,7 @@ using AddressBookV2.ViewComponents;
             WriteLiteral("\r\n        ");
             EndContext();
             BeginContext(320, 508, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cc4b8ada3619f4bfdc68671e4797ea4cf3a4f528363", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cc4b8ada3619f4bfdc68671e4797ea4cf3a4f528370", async() => {
                 BeginContext(377, 16, true);
                 WriteLiteral("\r\n\r\n            ");
                 EndContext();
@@ -113,7 +113,7 @@ using AddressBookV2.ViewComponents;
                 WriteLiteral("\r\n\r\n            <div class=\"form-group col-12 d-flex justify-content-end\">\r\n                ");
                 EndContext();
                 BeginContext(542, 127, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cc4b8ada3619f4bfdc68671e4797ea4cf3a4f529252", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5cc4b8ada3619f4bfdc68671e4797ea4cf3a4f529259", async() => {
                     BeginContext(660, 5, true);
                     WriteLiteral("Close");
                     EndContext();

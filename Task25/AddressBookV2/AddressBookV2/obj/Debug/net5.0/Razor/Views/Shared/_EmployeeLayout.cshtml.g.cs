@@ -24,7 +24,7 @@ using AddressBookV2.Models;
 #line default
 #line hidden
 #line 3 "C:\Coding\Internship\Task25\AddressBookV2\AddressBookV2\Views\_ViewImports.cshtml"
-using AddressBookV2.ViewModels;
+using AddressBookV2.Models.ViewModels;
 
 #line default
 #line hidden
@@ -34,7 +34,7 @@ using AddressBookV2.ViewComponents;
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"915546ee18e159785ec33afed05396b0fb32c4fb", @"/Views/Shared/_EmployeeLayout.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b106bab61bf6dae18dfab4f37ab9f06b9034ead7", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cad773c11d3c55cac85ead5b01ca72527cf764d2", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared__EmployeeLayout : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("rel", new global::Microsoft.AspNetCore.Html.HtmlString("stylesheet"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -88,7 +88,7 @@ using AddressBookV2.ViewComponents;
             WriteLiteral("\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n");
             EndContext();
             BeginContext(75, 406, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb11480", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb11487", async() => {
                 BeginContext(81, 121, true);
                 WriteLiteral("\r\n    <meta charset=\"utf-8\" />\r\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\r\n    <title>");
                 EndContext();
@@ -103,7 +103,7 @@ using AddressBookV2.ViewComponents;
                 WriteLiteral(" - Address Book</title>\r\n    ");
                 EndContext();
                 BeginContext(249, 75, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "915546ee18e159785ec33afed05396b0fb32c4fb12380", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "915546ee18e159785ec33afed05396b0fb32c4fb12387", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -122,7 +122,7 @@ using AddressBookV2.ViewComponents;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(330, 47, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "915546ee18e159785ec33afed05396b0fb32c4fb13713", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "915546ee18e159785ec33afed05396b0fb32c4fb13720", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -156,12 +156,12 @@ using AddressBookV2.ViewComponents;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(483, 2183, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb15945", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb15952", async() => {
                 BeginContext(489, 77, true);
                 WriteLiteral("\r\n    <header class=\"bg-header p-2 p-md-3 navbar navbar-expand-lg\">\r\n        ");
                 EndContext();
                 BeginContext(566, 89, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb16407", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb16414", async() => {
                     BeginContext(639, 12, true);
                     WriteLiteral("Address Book");
                     EndContext();
@@ -192,7 +192,7 @@ using AddressBookV2.ViewComponents;
                     ");
                 EndContext();
                 BeginContext(924, 47, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "915546ee18e159785ec33afed05396b0fb32c4fb18445", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "915546ee18e159785ec33afed05396b0fb32c4fb18452", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -211,7 +211,7 @@ using AddressBookV2.ViewComponents;
                 WriteLiteral("\r\n                </div>\r\n                <div class=\"navbar-nav roboto me-auto p-0 m-0\">\r\n                    ");
                 EndContext();
                 BeginContext(1082, 97, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb19892", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb19899", async() => {
                     BeginContext(1171, 4, true);
                     WriteLiteral("HOME");
                     EndContext();
@@ -237,7 +237,7 @@ using AddressBookV2.ViewComponents;
                 WriteLiteral("\r\n                    ");
                 EndContext();
                 BeginContext(1201, 98, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb21761", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb21768", async() => {
                     BeginContext(1291, 4, true);
                     WriteLiteral("+ADD");
                     EndContext();
@@ -294,7 +294,7 @@ using AddressBookV2.ViewComponents;
                 WriteLiteral("\r\n                    </div>\r\n                </div>\r\n            </div>\r\n        </main>\r\n    </div>\r\n\r\n    <footer class=\"border-top footer text-muted\">\r\n        <div class=\"container\">\r\n            &copy; 2021 - AddressBook - ");
                 EndContext();
                 BeginContext(1977, 73, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb25043", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb25050", async() => {
                     BeginContext(2039, 7, true);
                     WriteLiteral("Privacy");
                     EndContext();
@@ -320,7 +320,7 @@ using AddressBookV2.ViewComponents;
                 WriteLiteral("\r\n        </div>\r\n    </footer>\r\n    ");
                 EndContext();
                 BeginContext(2087, 55, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb26969", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb26976", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -338,7 +338,7 @@ using AddressBookV2.ViewComponents;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(2148, 71, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb28226", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb28233", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -356,7 +356,7 @@ using AddressBookV2.ViewComponents;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(2225, 62, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb29483", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb29490", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -383,7 +383,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
                 WriteLiteral("\r\n\r\n    ");
                 EndContext();
                 BeginContext(2295, 78, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb31578", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb31585", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -402,7 +402,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(2379, 98, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb32923", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb32930", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -421,7 +421,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_ScriptTagHelper.AppendVersion = true;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(2483, 113, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb34269", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "915546ee18e159785ec33afed05396b0fb32c4fb34276", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

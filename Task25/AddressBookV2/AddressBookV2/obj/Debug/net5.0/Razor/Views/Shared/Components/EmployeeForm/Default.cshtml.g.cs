@@ -24,12 +24,12 @@ using AddressBookV2.Models;
 #line default
 #line hidden
 #line 3 "C:\Coding\Internship\Task25\AddressBookV2\AddressBookV2\Views\_ViewImports.cshtml"
-using AddressBookV2.ViewModels;
+using AddressBookV2.Models.ViewModels;
 
 #line default
 #line hidden
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"0b6a86e2ce20bf470390fabef3f756c47ffa030a", @"/Views/Shared/Components/EmployeeForm/Default.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"b106bab61bf6dae18dfab4f37ab9f06b9034ead7", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"cad773c11d3c55cac85ead5b01ca72527cf764d2", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Components_EmployeeForm_Default : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<EmployeeViewModel>
     {
         private static readonly global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute __tagHelperAttribute_0 = new global::Microsoft.AspNetCore.Razor.TagHelpers.TagHelperAttribute("class", new global::Microsoft.AspNetCore.Html.HtmlString("text-danger invalid small"), global::Microsoft.AspNetCore.Razor.TagHelpers.HtmlAttributeValueStyle.DoubleQuotes);
@@ -59,7 +59,7 @@ using AddressBookV2.ViewModels;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(28, 80, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0b6a86e2ce20bf470390fabef3f756c47ffa030a3928", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("div", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0b6a86e2ce20bf470390fabef3f756c47ffa030a3935", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_TagHelpers_ValidationSummaryTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.ValidationSummaryTagHelper>();

@@ -1,12 +1,6 @@
-using AddressBookV2.Services;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Microsoft.Extensions.Configuration;
 
 namespace AddressBookV2
 {
@@ -14,14 +8,17 @@ namespace AddressBookV2
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            const string EnvironmentKey = "ASPNETCORE_STAGING_ENVIRONMENT";
+            var config = new ConfigurationBuilder()
+                            .AddEnvironmentVariables().Build();
+            CreateHostBuilder(args, config[EnvironmentKey]).Build().Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
+        public static IHostBuilder CreateHostBuilder(string[] args, string EnvironmentKey) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseEnvironment(EnvironmentKey).UseStartup<Startup>();
                 });
     }
 }

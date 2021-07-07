@@ -1,0 +1,15 @@
+C:\Coding\Internship\Task25\AddressBookV2\AddressBookServiceLibrary\bin\Debug\net5.0\AddressBookServiceLibrary.deps.json
+C:\Coding\Internship\Task25\AddressBookV2\AddressBookServiceLibrary\bin\Debug\net5.0\AddressBookServiceLibrary.dll
+C:\Coding\Internship\Task25\AddressBookV2\AddressBookServiceLibrary\bin\Debug\net5.0\ref\AddressBookServiceLibrary.dll
+C:\Coding\Internship\Task25\AddressBookV2\AddressBookServiceLibrary\bin\Debug\net5.0\AddressBookServiceLibrary.pdb
+C:\Coding\Internship\Task25\AddressBookV2\AddressBookServiceLibrary\bin\Debug\net5.0\AddressBookModelLibrary.dll
+C:\Coding\Internship\Task25\AddressBookV2\AddressBookServiceLibrary\bin\Debug\net5.0\AddressBookModelLibrary.pdb
+C:\Coding\Internship\Task25\AddressBookV2\AddressBookServiceLibrary\obj\Debug\net5.0\AddressBookServiceLibrary.csproj.AssemblyReference.cache
+C:\Coding\Internship\Task25\AddressBookV2\AddressBookServiceLibrary\obj\Debug\net5.0\AddressBookServiceLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Coding\Internship\Task25\AddressBookV2\AddressBookServiceLibrary\obj\Debug\net5.0\AddressBookServiceLibrary.AssemblyInfoInputs.cache
+C:\Coding\Internship\Task25\AddressBookV2\AddressBookServiceLibrary\obj\Debug\net5.0\AddressBookServiceLibrary.AssemblyInfo.cs
+C:\Coding\Internship\Task25\AddressBookV2\AddressBookServiceLibrary\obj\Debug\net5.0\AddressBookServiceLibrary.csproj.CoreCompileInputs.cache
+C:\Coding\Internship\Task25\AddressBookV2\AddressBookServiceLibrary\obj\Debug\net5.0\AddressBookServiceLibrary.csproj.CopyComplete
+C:\Coding\Internship\Task25\AddressBookV2\AddressBookServiceLibrary\obj\Debug\net5.0\AddressBookServiceLibrary.dll
+C:\Coding\Internship\Task25\AddressBookV2\AddressBookServiceLibrary\obj\Debug\net5.0\ref\AddressBookServiceLibrary.dll
+C:\Coding\Internship\Task25\AddressBookV2\AddressBookServiceLibrary\obj\Debug\net5.0\AddressBookServiceLibrary.pdb
