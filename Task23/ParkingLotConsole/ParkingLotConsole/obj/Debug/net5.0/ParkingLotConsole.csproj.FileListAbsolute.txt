@@ -1,4 +1,3 @@
-C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\obj\Debug\net5.0\ParkingLotConsole.csprojAssemblyReference.cache
 C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\obj\Debug\net5.0\ParkingLotConsole.GeneratedMSBuildEditorConfig.editorconfig
 C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\obj\Debug\net5.0\ParkingLotConsole.AssemblyInfoInputs.cache
 C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\obj\Debug\net5.0\ParkingLotConsole.AssemblyInfo.cs
@@ -14,3 +13,4 @@ C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\obj\Debug\net5.0
 C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\obj\Debug\net5.0\ref\ParkingLotConsole.dll
 C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\obj\Debug\net5.0\ParkingLotConsole.pdb
 C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\obj\Debug\net5.0\ParkingLotConsole.genruntimeconfig.cache
+C:\Coding\Internship\Task23\ParkingLotConsole\ParkingLotConsole\obj\Debug\net5.0\ParkingLotConsole.csproj.AssemblyReference.cache
