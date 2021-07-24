@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+
+import { LocationService } from '../services/location.service';
 
 @Component({
   selector: 'app-navigator',
@@ -7,12 +11,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavigatorComponent implements OnInit {
 
-  constructor() { }
+  moviesRouterLink: string = 'none';
+  isExpanded = false;
+  _subscription: any;
+
+  constructor(private _locationService: LocationService) { 
+    this._subscription = this._locationService.currentLocationChange.subscribe((value) => {
+      this.moviesRouterLink = 'explore/' + value + '/movies'
+    })
+  }
 
   ngOnInit(): void {
   }
 
-  isExpanded = false;
+  moviesNavigatorClick($event){
+    if(this.moviesRouterLink == 'none'){ 
+      $event.stopPropagation();
+      $event.preventDefault()
+      this._locationService.updatePickLocationChange(true);
+    }
+  }
 
   collapse() {
     this.isExpanded = false;
@@ -21,5 +39,4 @@ export class NavigatorComponent implements OnInit {
   toggle() {
     this.isExpanded = !this.isExpanded;
   }
-
 }

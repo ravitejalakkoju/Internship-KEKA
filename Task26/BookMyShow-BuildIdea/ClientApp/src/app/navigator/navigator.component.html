@@ -14,8 +14,8 @@
         <div class="left">
           <ul class="navbar-nav flex-grow">
             <li class="nav-item" >
-              <a class="nav-link fs-7 text-navigator" [routerLink]="['explore/hyderabad/movies']" [routerLinkActive]="['active-link']">
-                Movies
+              <a class="nav-link fs-7 text-navigator" [routerLink]="moviesRouterLink" [routerLinkActive]="['active-link']">
+                <span (click)="moviesNavigatorClick($event)">Movies</span>
               </a>
             </li>
           </ul>

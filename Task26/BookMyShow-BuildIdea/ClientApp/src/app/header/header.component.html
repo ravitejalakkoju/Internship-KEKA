@@ -29,17 +29,17 @@
               <a class="nav-link bg-danger small text-light p-1 px-3 rounded login" [routerLink]="['user/customer/login']">LogIn</a>
             </li>
             <li class="nav-item ms-2">
-              <button class="nav-link bg-transparent small text-light rounded p-2 py-1 border border-secondary" (click)="toggleOptions()">
+              <button class="nav-link bg-transparent text-light rounded p-2 py-1" (click)="toggleOptions()">
                 <i class="fas fa-bars"></i>
               </button>
             </li>
           </ng-template>
           <ng-template #logged>
             <li class="nav-item" [routerLinkActive]="['active-link']">
-              <a class="nav-link" [routerLink]="['user/customer']">
+              <button class="nav-link bg-transparent border-0" [routerLink]="['user/customer']" (click)="toggleOptions()">
                 <img src="assets/profile.png" class="rounded-circle border-1" width="25px"/>
                 <span class="ms-2 small text-light">Hi, Guest</span>
-              </a>
+              </button>
             </li>
           </ng-template>
         </ul>

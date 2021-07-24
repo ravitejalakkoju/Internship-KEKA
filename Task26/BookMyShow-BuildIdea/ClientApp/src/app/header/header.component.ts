@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+
+import { LocationService } from '../services/location.service';
 
 @Component({
   selector: 'app-header',
@@ -11,10 +14,20 @@ export class HeaderComponent implements OnInit {
   isLogged: boolean = false;
 
   selectedCity: string = "Select City"; 
-  locationPicker: boolean = false;
 
+  locationPicker: boolean;
+  locationPickerSubscription: any;
+  
   options: boolean = false;
 
+  constructor(private router: Router, 
+    private _locationService: LocationService) { 
+      this.locationPicker = this._locationService.pickLocation;
+      this.locationPickerSubscription = this._locationService.pickLocationChange.subscribe(value => {
+        this.locationPicker = value
+      })
+  }
+  
   collapse() {
     this.isExpanded = false;
   }
@@ -25,17 +38,22 @@ export class HeaderComponent implements OnInit {
   
   toggleLocationPicker(){
     this.locationPicker = !this.locationPicker;
+    this._locationService.updatePickLocationChange(this.locationPicker);
   }
 
   toggleOptions(){
     this.options = !this.options;
   }
 
-  selectCity(value: string){
-    this.selectedCity = value;
+  capitalizeFirstLetter(str: string) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
   }
 
-  constructor() { }
+  selectCity(value: string){
+    this.selectedCity = this.capitalizeFirstLetter(value);
+    this.router.navigate(['explore', value, 'movies']);
+    this._locationService.updateCurrentLocation(value);
+  }
 
   ngOnInit(): void {
   }

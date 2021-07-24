@@ -9,6 +9,8 @@ export class OptionsComponent implements OnInit {
 
   @Output() toggleOptions: EventEmitter<any> = new EventEmitter();
   
+  lock: boolean = true;
+  
   constructor() { }
 
   ngOnInit(): void {
