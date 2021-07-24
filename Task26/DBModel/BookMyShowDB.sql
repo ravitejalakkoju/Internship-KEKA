@@ -126,7 +126,6 @@ begin
 end;
 go
 
-
 create table Customer(
 ID int identity(1,1),
 	constraint [User_Constraint_PK] primary key (ID),
@@ -136,6 +135,19 @@ Email varchar(40) not null,
 Password varchar(max) not null,
 DisplayPicture varchar(max) null,
 Status smallint not null default 0,
+CreationDate date not null
+);
+
+create table Admin(
+ID int,
+	constraint [Admin_PK] primary key (ID),
+TheatreID int not null,
+	constraint [Admin_Theatre_FK] foreign key (TheatreID) references Theatre(ID),
+EmployeeID varchar(20) not null,
+	constraint [Theatre_Employee_Unique] unique (TheatreID, EmployeeID),
+Email varchar(30) not null,
+	constraint [Email_Unique] unique (Email),
+Password varchar(30) not null,
 CreationDate date not null
 );
 
@@ -161,4 +173,3 @@ SeatID int,
 BookingID int,
 	constraint [Booking_Ticket_Constraint_FK] foreign key (BookingID) references Booking(ID)
 );
-

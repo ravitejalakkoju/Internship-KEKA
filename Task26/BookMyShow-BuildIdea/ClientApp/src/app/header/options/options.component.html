@@ -1,0 +1,14 @@
+<div class="options position-absolute top-0 w-100 h-100 d-flex justify-content-end" (click)="this.toggleOptions.emit($event)">
+    <div class="options-container col-12 col-sm-6 col-lg-4 bg-white small" (click)="$event.stopPropagation()">
+        <ul class="list-unstyled">
+            <li class="bg-darkblue navbar p-3 fs-5"><b class="text-white">Hey!</b></li>
+            <li class="bg-light p-3 options-list-item text-secondary col-12 d-flex justify-content-between">
+                <div>
+                    <i class="far fa-bell fs-6"></i>
+                    <span class="small ms-3 fw-bold">Notifications</span>
+                </div>
+                <i class="fas fa-arrow-right pt-1"></i>
+            </li>
+        </ul>
+    </div>
+</div>

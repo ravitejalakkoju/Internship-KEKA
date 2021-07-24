@@ -1,0 +1,31 @@
+<div class="location-picker justify-content-center p-5 position-absolute top-0 border w-100 h-100" (click)="this.toggleLocationPicker.emit($event)">
+    <div class="location-picker-container border text-center col-md-10 bg-white mt-2 small m-auto" (click)="$event.stopPropagation()">
+        <div class="bg-transparent border m-3 p-2 ps-0">
+            <i class="fas fa-search ms-1 me-4 small text-secondary"></i>
+            <input type="text" class="col-11 border-0 small" placeholder="Search for your city">
+        </div>
+        <span>Popular Cities</span>
+        <ul class="list-unstyled list-inline">
+            <li class="list-inline-item text-center">
+                <label>
+                    <input type="radio" value="Hyderabad" name="place" [(ngModel)] = "selectedCity" (change)="isSelected($event.target.value)">
+                    <img src="https://cdn.iconscout.com/icon/free/png-512/charminar-1-119696.png" width="100" class="m-2">
+                    <!-- <img src="https://cdn.iconscout.com/icon/free/png-256/charminar-119682.png" width="100" class="m-2"> -->
+                    <br/>Hyderabad
+                </label>
+            </li>
+        </ul>    
+        <div class="cities-list" *ngIf="viewCities">
+            <span class="text-center small text-dark">Other Cities</span>
+            <ul class="small list-unstyled list-inline text-secondary row mt-3">
+                <li class="list-inline-item text-left col-2">
+                    <label>
+                        <input type="radio" value="Amritsar" name="place"  [(ngModel)] = "selectedCity" (change)="isSelected($event.target.value)">
+                        <span>Amritsar</span>
+                    </label>
+                </li>
+            </ul>
+        </div>
+        <button class="bg-transparent border-0 m-2 text-danger" (click)="toggleViewCities()">{{!viewCities ? "View" : "Hide"}} all Cities</button>
+    </div>
+</div>
