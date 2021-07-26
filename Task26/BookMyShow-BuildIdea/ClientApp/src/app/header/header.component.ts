@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Router} from '@angular/router';
 
 import { LocationService } from '../services/location.service';
 
@@ -20,8 +19,7 @@ export class HeaderComponent implements OnInit {
   
   options: boolean = false;
 
-  constructor(private router: Router, 
-    private _locationService: LocationService) { 
+  constructor(private _locationService: LocationService) { 
       this.locationPicker = this._locationService.pickLocation;
       this.locationPickerSubscription = this._locationService.pickLocationChange.subscribe(value => {
         this.locationPicker = value
@@ -51,8 +49,8 @@ export class HeaderComponent implements OnInit {
 
   selectCity(value: string){
     this.selectedCity = this.capitalizeFirstLetter(value);
-    this.router.navigate(['explore', value, 'movies']);
     this._locationService.updateCurrentLocation(value);
+    this._locationService.updatePickLocationChange(false);
   }
 
   ngOnInit(): void {

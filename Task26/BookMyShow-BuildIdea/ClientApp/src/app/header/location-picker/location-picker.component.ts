@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-location-picker',
@@ -14,6 +15,8 @@ export class LocationPickerComponent implements OnInit {
   
   selectedCity: string = null
   viewCities: boolean = false 
+  
+  constructor(private router: Router) { }
 
   toggleViewCities(){
     this.viewCities = !this.viewCities
@@ -21,6 +24,7 @@ export class LocationPickerComponent implements OnInit {
 
   isSelected(value: string){
     this.selectedCity = value
+    this.router.navigate(['explore', value, 'movies']);
     this.citySelector.emit(this.selectedCity)
   }
 
@@ -28,7 +32,6 @@ export class LocationPickerComponent implements OnInit {
     if(this.selectedCity == value) return true;
     else return false;
   }
-  constructor() { }
 
   ngOnInit(): void {
     this.selectedCity = this.cityName

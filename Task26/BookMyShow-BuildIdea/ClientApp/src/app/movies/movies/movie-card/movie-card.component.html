@@ -1,25 +1,5 @@
-<li class="list-inline-item text-left col-6 col-md-3 m-0 px-2 mb-3">
-    <img src="https://i.pinimg.com/originals/1f/26/d3/1f26d3c52508b1a46235e0cf7087ab65.jpg" width="175" class="rounded my-3">
-    <h5>Avengers</h5>
-    <span class="text-secondary">Telugu, Hindi, English</span>
-</li>
-<li class="list-inline-item text-left col-6 col-md-3 m-0 px-2 mb-3">
-    <img src="https://i.pinimg.com/originals/1f/26/d3/1f26d3c52508b1a46235e0cf7087ab65.jpg" width="175" class="rounded my-3">
-    <h5>Avengers</h5>
-    <span class="text-secondary">Telugu, Hindi, English</span>
-</li>
-<li class="list-inline-item text-left col-6 col-md-3 m-0 px-2 mb-3">
-    <img src="https://i.pinimg.com/originals/1f/26/d3/1f26d3c52508b1a46235e0cf7087ab65.jpg" width="175" class="rounded my-3">
-    <h5>Avengers</h5>
-    <span class="text-secondary">Telugu, Hindi, English</span>
-</li>
-<li class="list-inline-item text-left col-6 col-md-3 m-0 px-2 mb-3">
-    <img src="https://i.pinimg.com/originals/1f/26/d3/1f26d3c52508b1a46235e0cf7087ab65.jpg" width="175" class="rounded my-3">
-    <h5>Avengers</h5>
-    <span class="text-secondary">Telugu, Hindi, English</span>
-</li>
-<li class="list-inline-item text-left col-6 col-md-3 m-0 px-2 mb-3">
-    <img src="https://i.pinimg.com/originals/1f/26/d3/1f26d3c52508b1a46235e0cf7087ab65.jpg" width="175" class="rounded my-3">
-    <h5>Avengers</h5>
-    <span class="text-secondary">Telugu, Hindi, English</span>
-</li>
+<a [routerLink]="['/explore/hyderabad/movies', movie.id]" class="text-dark text-decoration-none">
+    <img [src]="movie.poster" width="175" class="rounded my-3">
+    <h5>{{movie.name}}</h5>
+    <span class="text-secondary">{{movie.languages}}</span>
+</a>
